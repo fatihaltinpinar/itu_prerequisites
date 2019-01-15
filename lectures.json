@@ -1,0 +1,402 @@
+{
+  "AKM215E": {
+    "lecture_name": "Fluid Mechanics II",
+    "lecture_preq": []
+  },
+  "ATA301": {
+    "lecture_name": "Turkish History I-II",
+    "lecture_preq": []
+  },
+  "BED201E": {
+    "lecture_name": "Physical Education",
+    "lecture_preq": []
+  },
+  "BIL113E": {
+    "lecture_name": "Intr.to Sci& Eng.Comp.(MATLAB)",
+    "lecture_preq": []
+  },
+  "BIO492E": {
+    "lecture_name": "Graduation Project",
+    "lecture_preq": []
+  },
+  "BLGDRT": {
+    "lecture_name": "Tez \u00c7al\u0131\u015fmas\u0131",
+    "lecture_preq": []
+  },
+  "BUS324": {
+    "lecture_name": "Turkish Economy",
+    "lecture_preq": []
+  },
+  "CAB4862": {
+    "lecture_name": "Silefon-Vibrafon",
+    "lecture_preq": []
+  },
+  "CEV492E": {
+    "lecture_name": "Graduation Design Project",
+    "lecture_preq": []
+  },
+  "CHZ492E": {
+    "lecture_name": "Graduation Thesis",
+    "lecture_preq": []
+  },
+  "CIE442": {
+    "lecture_name": "Treatment Process Engineering",
+    "lecture_preq": []
+  },
+  "CMP113": {
+    "lecture_name": "Intr.to Business Computing",
+    "lecture_preq": []
+  },
+  "COM101": {
+    "lecture_name": "Compt.& Eng. Programming",
+    "lecture_preq": []
+  },
+  "DEN492E": {
+    "lecture_name": "Graduation Project",
+    "lecture_preq": []
+  },
+  "DFH499": {
+    "lecture_name": "Liderlik ve Kriz Y\u00f6netimi",
+    "lecture_preq": []
+  },
+  "DNK205E": {
+    "lecture_name": "Dynamics",
+    "lecture_preq": []
+  },
+  "DUI492E": {
+    "lecture_name": "Graduation Project",
+    "lecture_preq": []
+  },
+  "EAS150": {
+    "lecture_name": "Graphic Communications",
+    "lecture_preq": []
+  },
+  "ECO313": {
+    "lecture_name": "Chemistry and Society",
+    "lecture_preq": []
+  },
+  "ECN492E": {
+    "lecture_name": "Graduation Project",
+    "lecture_preq": []
+  },
+  "EHB492E": {
+    "lecture_name": "Graduation Project",
+    "lecture_preq": []
+  },
+  "EHN352": {
+    "lecture_name": "Digital Communications",
+    "lecture_preq": []
+  },
+  "EKO201E": {
+    "lecture_name": "Economics",
+    "lecture_preq": []
+  },
+  "ELE492": {
+    "lecture_name": "Bitirme \u00c7al\u0131\u015fmas\u0131",
+    "lecture_preq": []
+  },
+  "ELH492": {
+    "lecture_name": "Bitirme \u00c7al\u0131\u015fmas\u0131",
+    "lecture_preq": []
+  },
+  "ELK498E": {
+    "lecture_name": "Photovoltaic Systems",
+    "lecture_preq": []
+  },
+  "END493E": {
+    "lecture_name": "Applied Statistics",
+    "lecture_preq": []
+  },
+  "ENR401": {
+    "lecture_name": "Refrigeration& HVAC Systems",
+    "lecture_preq": []
+  },
+  "ESL102": {
+    "lecture_name": "English II",
+    "lecture_preq": []
+  },
+  "ETK101E": {
+    "lecture_name": "Engineering Ethics",
+    "lecture_preq": []
+  },
+  "EUT492E": {
+    "lecture_name": "Graduation Project",
+    "lecture_preq": []
+  },
+  "FIZ311": {
+    "lecture_name": "Kuantum Mekani\u011fi I",
+    "lecture_preq": []
+  },
+  "GED301": {
+    "lecture_name": "General Education",
+    "lecture_preq": []
+  },
+  "GEM492E": {
+    "lecture_name": "Graduation Design Project",
+    "lecture_preq": []
+  },
+  "GEO492E": {
+    "lecture_name": "Design Project II",
+    "lecture_preq": []
+  },
+  "GID492E": {
+    "lecture_name": "Graduation Project",
+    "lecture_preq": []
+  },
+  "GMI492E": {
+    "lecture_name": "Design Project",
+    "lecture_preq": []
+  },
+  "GSB363E": {
+    "lecture_name": "Ceramic Applications in Archi.",
+    "lecture_preq": []
+  },
+  "GUV492E": {
+    "lecture_name": "Graduation Project",
+    "lecture_preq": []
+  },
+  "HUK214": {
+    "lecture_name": "Teknolojik Yeniliklerin Korun.",
+    "lecture_preq": []
+  },
+  "HSS361": {
+    "lecture_name": "Effective Communication",
+    "lecture_preq": []
+  },
+  "ICM492E": {
+    "lecture_name": "Graduation Project",
+    "lecture_preq": []
+  },
+  "ILT101E": {
+    "lecture_name": "Technical Writing&Presentation",
+    "lecture_preq": []
+  },
+  "IML492E": {
+    "lecture_name": "Manufacturing Design Project",
+    "lecture_preq": []
+  },
+  "ING206": {
+    "lecture_name": "English IV",
+    "lecture_preq": []
+  },
+  "INS494E": {
+    "lecture_name": "Experimental Hydraulics",
+    "lecture_preq": []
+  },
+  "ISE333": {
+    "lecture_name": "Int. to Comp. & Inf. Security",
+    "lecture_preq": []
+  },
+  "ISL492E": {
+    "lecture_name": "Management Eng. Design Project",
+    "lecture_preq": []
+  },
+  "ISH307E": {
+    "lecture_name": "Intr.to Chemical Technologies",
+    "lecture_preq": []
+  },
+  "ITBXXX": {
+    "lecture_name": "Test Course",
+    "lecture_preq": []
+  },
+  "JDF492E": {
+    "lecture_name": "Design Project",
+    "lecture_preq": []
+  },
+  "JEF492E": {
+    "lecture_name": "Graduation Project",
+    "lecture_preq": []
+  },
+  "JEO492E": {
+    "lecture_name": "Graduation Desing Project",
+    "lecture_preq": []
+  },
+  "KIM492E": {
+    "lecture_name": "Graduation Project",
+    "lecture_preq": []
+  },
+  "KMM492E": {
+    "lecture_name": "Graduation Project",
+    "lecture_preq": []
+  },
+  "KMP4535": {
+    "lecture_name": "\u00c7alg\u0131 I (\u00dc\u00e7 Telli Kemen\u00e7e)",
+    "lecture_preq": []
+  },
+  "KON492E": {
+    "lecture_name": "Senior Design Project",
+    "lecture_preq": []
+  },
+  "MAD492E": {
+    "lecture_name": "Graduation Project",
+    "lecture_preq": []
+  },
+  "MAK497E": {
+    "lecture_name": "Alternative Fuels for IC Eng",
+    "lecture_preq": []
+  },
+  "MAL203E": {
+    "lecture_name": "Material Science",
+    "lecture_preq": []
+  },
+  "MAT498E": {
+    "lecture_name": "Basic Algebraic Geometry",
+    "lecture_preq": []
+  },
+  "MCH100L": {
+    "lecture_name": "Maritime Chemistry  Laboratory",
+    "lecture_preq": []
+  },
+  "MEK207E": {
+    "lecture_name": "Engineering Mechanics",
+    "lecture_preq": []
+  },
+  "MEN431": {
+    "lecture_name": "Engine Room Mangm.& Leadership",
+    "lecture_preq": []
+  },
+  "MET492E": {
+    "lecture_name": "Design Project",
+    "lecture_preq": []
+  },
+  "MIM484": {
+    "lecture_name": "Uygulama Projesi",
+    "lecture_preq": []
+  },
+  "MOD371": {
+    "lecture_name": "Intr. to World Affairs",
+    "lecture_preq": []
+  },
+  "MRE492": {
+    "lecture_name": "Design Project",
+    "lecture_preq": []
+  },
+  "MRT492": {
+    "lecture_name": "Graduation Project",
+    "lecture_preq": []
+  },
+  "MTO497E": {
+    "lecture_name": "Atmospheric Optics & Acoustics",
+    "lecture_preq": []
+  },
+  "MTH301": {
+    "lecture_name": "Numerical Methods",
+    "lecture_preq": []
+  },
+  "MTM421": {
+    "lecture_name": "Ship Handling and Maneuvering",
+    "lecture_preq": []
+  },
+  "MTR492": {
+    "lecture_name": "Bitirme \u00c7al\u0131\u015fmas\u0131",
+    "lecture_preq": []
+  },
+  "MST492": {
+    "lecture_name": "Vibrations of Marine Eng. Sys.",
+    "lecture_preq": []
+  },
+  "MUH453E": {
+    "lecture_name": "Optimal Control Theory",
+    "lecture_preq": []
+  },
+  "MUK210E": {
+    "lecture_name": "Strength of Materials II",
+    "lecture_preq": []
+  },
+  "MUT4332": {
+    "lecture_name": "Prozodi",
+    "lecture_preq": []
+  },
+  "MUZ496E": {
+    "lecture_name": "Writing About Music",
+    "lecture_preq": []
+  },
+  "NAE471": {
+    "lecture_name": "Warship Design",
+    "lecture_preq": []
+  },
+  "NTH104": {
+    "lecture_name": "National History II",
+    "lecture_preq": []
+  },
+  "PAZ381": {
+    "lecture_name": "Principles of Accounting",
+    "lecture_preq": []
+  },
+  "PEM492E": {
+    "lecture_name": "Graduation Project",
+    "lecture_preq": []
+  },
+  "PET492E": {
+    "lecture_name": "Graduation Project",
+    "lecture_preq": []
+  },
+  "PHE101": {
+    "lecture_name": "Physical Educaion",
+    "lecture_preq": []
+  },
+  "PHY127L": {
+    "lecture_name": "Physics Lab",
+    "lecture_preq": []
+  },
+  "RES112E": {
+    "lecture_name": "Computer Aided Tech Drawing",
+    "lecture_preq": []
+  },
+  "SBP497E": {
+    "lecture_name": "Rural Settlements and Problems",
+    "lecture_preq": []
+  },
+  "SES4327": {
+    "lecture_name": "Koro E\u011fitimi",
+    "lecture_preq": []
+  },
+  "STA204E": {
+    "lecture_name": "Statics&Strength of Materials",
+    "lecture_preq": []
+  },
+  "STI102": {
+    "lecture_name": "Statistics II",
+    "lecture_preq": []
+  },
+  "TEB4726": {
+    "lecture_name": "\u0130leri \u0130ngilizce-IV",
+    "lecture_preq": []
+  },
+  "TEK321": {
+    "lecture_name": "Makina Elemanlar\u0131",
+    "lecture_preq": []
+  },
+  "TEL492": {
+    "lecture_name": "Bitirme \u00c7al\u0131\u015fmas\u0131",
+    "lecture_preq": []
+  },
+  "TER206E": {
+    "lecture_name": "Thermodynamics II",
+    "lecture_preq": []
+  },
+  "TES211E": {
+    "lecture_name": "Project III",
+    "lecture_preq": []
+  },
+  "THO4653": {
+    "lecture_name": "Vurmal\u0131 \u00c7alg\u0131lar VI",
+    "lecture_preq": []
+  },
+  "TUR104": {
+    "lecture_name": "Turkish Language II",
+    "lecture_preq": []
+  },
+  "UCK492E": {
+    "lecture_name": "Graduation Project",
+    "lecture_preq": []
+  },
+  "UZB492E": {
+    "lecture_name": "Graduation Project",
+    "lecture_preq": []
+  },
+  "YTO301": {
+    "lecture_name": "Yab. i\u00e7in T\u00fcrk\u00e7e(\u0130leri Seviye)",
+    "lecture_preq": []
+  }
+}
