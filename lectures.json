@@ -20,7 +20,7 @@
     "lecture_preq": []
   },
   "BLGDRT": {
-    "lecture_name": "Tez \u00c7al\u0131\u015fmas\u0131",
+    "lecture_name": "Tez Çalışması",
     "lecture_preq": []
   },
   "BUS324": {
@@ -56,7 +56,7 @@
     "lecture_preq": []
   },
   "DFH499": {
-    "lecture_name": "Liderlik ve Kriz Y\u00f6netimi",
+    "lecture_name": "Liderlik ve Kriz Yönetimi",
     "lecture_preq": []
   },
   "DNK205E": {
@@ -92,11 +92,11 @@
     "lecture_preq": []
   },
   "ELE492": {
-    "lecture_name": "Bitirme \u00c7al\u0131\u015fmas\u0131",
+    "lecture_name": "Bitirme Çalışması",
     "lecture_preq": []
   },
   "ELH492": {
-    "lecture_name": "Bitirme \u00c7al\u0131\u015fmas\u0131",
+    "lecture_name": "Bitirme Çalışması",
     "lecture_preq": []
   },
   "ELK498E": {
@@ -124,7 +124,7 @@
     "lecture_preq": []
   },
   "FIZ311": {
-    "lecture_name": "Kuantum Mekani\u011fi I",
+    "lecture_name": "Kuantum Mekaniği I",
     "lecture_preq": []
   },
   "GED301": {
@@ -220,7 +220,7 @@
     "lecture_preq": []
   },
   "KMP4535": {
-    "lecture_name": "\u00c7alg\u0131 I (\u00dc\u00e7 Telli Kemen\u00e7e)",
+    "lecture_name": "Çalgı I (Üç Telli Kemençe)",
     "lecture_preq": []
   },
   "KON492E": {
@@ -288,7 +288,7 @@
     "lecture_preq": []
   },
   "MTR492": {
-    "lecture_name": "Bitirme \u00c7al\u0131\u015fmas\u0131",
+    "lecture_name": "Bitirme Çalışması",
     "lecture_preq": []
   },
   "MST492": {
@@ -348,7 +348,7 @@
     "lecture_preq": []
   },
   "SES4327": {
-    "lecture_name": "Koro E\u011fitimi",
+    "lecture_name": "Koro Eğitimi",
     "lecture_preq": []
   },
   "STA204E": {
@@ -360,15 +360,15 @@
     "lecture_preq": []
   },
   "TEB4726": {
-    "lecture_name": "\u0130leri \u0130ngilizce-IV",
+    "lecture_name": "İleri İngilizce-IV",
     "lecture_preq": []
   },
   "TEK321": {
-    "lecture_name": "Makina Elemanlar\u0131",
+    "lecture_name": "Makina Elemanları",
     "lecture_preq": []
   },
   "TEL492": {
-    "lecture_name": "Bitirme \u00c7al\u0131\u015fmas\u0131",
+    "lecture_name": "Bitirme Çalışması",
     "lecture_preq": []
   },
   "TER206E": {
@@ -380,7 +380,7 @@
     "lecture_preq": []
   },
   "THO4653": {
-    "lecture_name": "Vurmal\u0131 \u00c7alg\u0131lar VI",
+    "lecture_name": "Vurmalı Çalgılar VI",
     "lecture_preq": []
   },
   "TUR104": {
@@ -396,7 +396,7 @@
     "lecture_preq": []
   },
   "YTO301": {
-    "lecture_name": "Yab. i\u00e7in T\u00fcrk\u00e7e(\u0130leri Seviye)",
+    "lecture_name": "Yab. için Türkçe(İleri Seviye)",
     "lecture_preq": []
   }
 }

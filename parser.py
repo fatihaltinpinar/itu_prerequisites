@@ -37,7 +37,7 @@ def parse_lectures(program_codes):
     data = {}
     for program_code in program_codes:
 
-        print('Looking for', program_code)
+        print('\nLooking for', program_code)
         try:
             page = requests.post('http://www.sis.itu.edu.tr/tr/onsart/onsart_tr.php',
                                  data={'ders_kodu': program_code}).content
