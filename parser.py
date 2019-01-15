@@ -48,7 +48,6 @@ def parse_lectures(program_codes):
             raise
 
         print('Making soup of', program_code)
-        page.encoding
         soup = BeautifulSoup(page, 'html.parser')
         preq_table = soup.find('table', {'class': 'onsart'})
 
@@ -80,4 +79,4 @@ def parse_lectures(program_codes):
 
 if __name__ == '__main__':
     with open('lectures.json', 'w') as f:
-            json.dump(parse_lectures(programCodes), f, indent=2)
+            json.dump(parse_lectures(programCodes), f, indent=2, ensure_ascii=False)
