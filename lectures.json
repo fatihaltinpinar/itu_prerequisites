@@ -1,7 +1,10 @@
 {
   "AKM215E": {
     "lecture_name": "Fluid Mechanics II",
-    "lecture_preq": []
+    "lecture_preq": [
+      "AKM214",
+      "AKM214E"
+    ]
   },
   "ATA301": {
     "lecture_name": "Turkish History I-II",
@@ -17,7 +20,9 @@
   },
   "BIO492E": {
     "lecture_name": "Graduation Project",
-    "lecture_preq": []
+    "lecture_preq": [
+      "bitirme_onsart"
+    ]
   },
   "BLGDRT": {
     "lecture_name": "Tez Çalışması",
@@ -25,7 +30,12 @@
   },
   "BUS324": {
     "lecture_name": "Turkish Economy",
-    "lecture_preq": []
+    "lecture_preq": [
+      "ECO101",
+      "ECO102",
+      "BUS111",
+      "BUS112"
+    ]
   },
   "CAB4862": {
     "lecture_name": "Silefon-Vibrafon",
@@ -33,11 +43,15 @@
   },
   "CEV492E": {
     "lecture_name": "Graduation Design Project",
-    "lecture_preq": []
+    "lecture_preq": [
+      "bitirme_onsart"
+    ]
   },
   "CHZ492E": {
     "lecture_name": "Graduation Thesis",
-    "lecture_preq": []
+    "lecture_preq": [
+      "bitirme_onsart"
+    ]
   },
   "CIE442": {
     "lecture_name": "Treatment Process Engineering",
@@ -53,7 +67,9 @@
   },
   "DEN492E": {
     "lecture_name": "Graduation Project",
-    "lecture_preq": []
+    "lecture_preq": [
+      "bitirme_onsart"
+    ]
   },
   "DFH499": {
     "lecture_name": "Liderlik ve Kriz Yönetimi",
@@ -61,11 +77,18 @@
   },
   "DNK205E": {
     "lecture_name": "Dynamics",
-    "lecture_preq": []
+    "lecture_preq": [
+      "FIZ102",
+      "FIZ102E",
+      "STA201",
+      "STA201E"
+    ]
   },
   "DUI492E": {
     "lecture_name": "Graduation Project",
-    "lecture_preq": []
+    "lecture_preq": [
+      "bitirme_onsart"
+    ]
   },
   "EAS150": {
     "lecture_name": "Graphic Communications",
@@ -77,15 +100,22 @@
   },
   "ECN492E": {
     "lecture_name": "Graduation Project",
-    "lecture_preq": []
+    "lecture_preq": [
+      "bitirme_onsart"
+    ]
   },
   "EHB492E": {
     "lecture_name": "Graduation Project",
-    "lecture_preq": []
+    "lecture_preq": [
+      "bitirme_onsart"
+    ]
   },
   "EHN352": {
     "lecture_name": "Digital Communications",
-    "lecture_preq": []
+    "lecture_preq": [
+      "EHN351",
+      "EHB351E"
+    ]
   },
   "EKO201E": {
     "lecture_name": "Economics",
@@ -93,19 +123,29 @@
   },
   "ELE492": {
     "lecture_name": "Bitirme Çalışması",
-    "lecture_preq": []
+    "lecture_preq": [
+      "bitirme_onsart"
+    ]
   },
   "ELH492": {
     "lecture_name": "Bitirme Çalışması",
-    "lecture_preq": []
+    "lecture_preq": [
+      "bitirme_onsart"
+    ]
   },
   "ELK498E": {
     "lecture_name": "Photovoltaic Systems",
-    "lecture_preq": []
+    "lecture_preq": [
+      "ELK331",
+      "ELK331E"
+    ]
   },
   "END493E": {
     "lecture_name": "Applied Statistics",
-    "lecture_preq": []
+    "lecture_preq": [
+      "END311",
+      "END311E"
+    ]
   },
   "ENR401": {
     "lecture_name": "Refrigeration& HVAC Systems",
@@ -113,7 +153,9 @@
   },
   "ESL102": {
     "lecture_name": "English II",
-    "lecture_preq": []
+    "lecture_preq": [
+      "ESL101"
+    ]
   },
   "ETK101E": {
     "lecture_name": "Engineering Ethics",
@@ -121,11 +163,20 @@
   },
   "EUT492E": {
     "lecture_name": "Graduation Project",
-    "lecture_preq": []
+    "lecture_preq": [
+      "bitirme_onsart",
+      "EUT413",
+      "EUT413E",
+      "EUT411",
+      "EUT419E"
+    ]
   },
   "FIZ311": {
     "lecture_name": "Kuantum Mekaniği I",
-    "lecture_preq": []
+    "lecture_preq": [
+      "MAT210",
+      "MAT210E"
+    ]
   },
   "GED301": {
     "lecture_name": "General Education",
@@ -133,19 +184,29 @@
   },
   "GEM492E": {
     "lecture_name": "Graduation Design Project",
-    "lecture_preq": []
+    "lecture_preq": [
+      "bitirme_onsart"
+    ]
   },
   "GEO492E": {
     "lecture_name": "Design Project II",
-    "lecture_preq": []
+    "lecture_preq": [
+      "bitirme_onsart",
+      "GEO491",
+      "GEO491E"
+    ]
   },
   "GID492E": {
     "lecture_name": "Graduation Project",
-    "lecture_preq": []
+    "lecture_preq": [
+      "bitirme_onsart"
+    ]
   },
   "GMI492E": {
     "lecture_name": "Design Project",
-    "lecture_preq": []
+    "lecture_preq": [
+      "bitirme_onsart"
+    ]
   },
   "GSB363E": {
     "lecture_name": "Ceramic Applications in Archi.",
@@ -153,7 +214,9 @@
   },
   "GUV492E": {
     "lecture_name": "Graduation Project",
-    "lecture_preq": []
+    "lecture_preq": [
+      "bitirme_onsart"
+    ]
   },
   "HUK214": {
     "lecture_name": "Teknolojik Yeniliklerin Korun.",
@@ -165,7 +228,13 @@
   },
   "ICM492E": {
     "lecture_name": "Graduation Project",
-    "lecture_preq": []
+    "lecture_preq": [
+      "bitirme_onsart",
+      "ICM411",
+      "ICM411E",
+      "ICM443E",
+      "ICM443"
+    ]
   },
   "ILT101E": {
     "lecture_name": "Technical Writing&Presentation",
@@ -173,15 +242,30 @@
   },
   "IML492E": {
     "lecture_name": "Manufacturing Design Project",
-    "lecture_preq": []
+    "lecture_preq": [
+      "bitirme_onsart"
+    ]
   },
   "ING206": {
     "lecture_name": "English IV",
-    "lecture_preq": []
+    "lecture_preq": [
+      "ingonsart"
+    ]
   },
   "INS494E": {
     "lecture_name": "Experimental Hydraulics",
-    "lecture_preq": []
+    "lecture_preq": [
+      "INS321",
+      "INS321E",
+      "INS361",
+      "INS361E",
+      "INS360",
+      "INS360E",
+      "INS352",
+      "INS352E",
+      "INS354",
+      "INS354E"
+    ]
   },
   "ISE333": {
     "lecture_name": "Int. to Comp. & Inf. Security",
@@ -189,7 +273,9 @@
   },
   "ISL492E": {
     "lecture_name": "Management Eng. Design Project",
-    "lecture_preq": []
+    "lecture_preq": [
+      "bitirme_onsart"
+    ]
   },
   "ISH307E": {
     "lecture_name": "Intr.to Chemical Technologies",
@@ -201,23 +287,35 @@
   },
   "JDF492E": {
     "lecture_name": "Design Project",
-    "lecture_preq": []
+    "lecture_preq": [
+      "bitirme_onsart"
+    ]
   },
   "JEF492E": {
     "lecture_name": "Graduation Project",
-    "lecture_preq": []
+    "lecture_preq": [
+      "bitirme_onsart"
+    ]
   },
   "JEO492E": {
     "lecture_name": "Graduation Desing Project",
-    "lecture_preq": []
+    "lecture_preq": [
+      "bitirme_onsart",
+      "JEO312",
+      "JEO312E"
+    ]
   },
   "KIM492E": {
     "lecture_name": "Graduation Project",
-    "lecture_preq": []
+    "lecture_preq": [
+      "bitirme_onsart"
+    ]
   },
   "KMM492E": {
     "lecture_name": "Graduation Project",
-    "lecture_preq": []
+    "lecture_preq": [
+      "bitirme_onsart"
+    ]
   },
   "KMP4535": {
     "lecture_name": "Çalgı I (Üç Telli Kemençe)",
@@ -225,15 +323,24 @@
   },
   "KON492E": {
     "lecture_name": "Senior Design Project",
-    "lecture_preq": []
+    "lecture_preq": [
+      "bitirme_onsart"
+    ]
   },
   "MAD492E": {
     "lecture_name": "Graduation Project",
-    "lecture_preq": []
+    "lecture_preq": [
+      "bitirme_onsart"
+    ]
   },
   "MAK497E": {
     "lecture_name": "Alternative Fuels for IC Eng",
-    "lecture_preq": []
+    "lecture_preq": [
+      "MAK212",
+      "MAK212E",
+      "TEK314E",
+      "TEK314"
+    ]
   },
   "MAL203E": {
     "lecture_name": "Material Science",
@@ -241,7 +348,10 @@
   },
   "MAT498E": {
     "lecture_name": "Basic Algebraic Geometry",
-    "lecture_preq": []
+    "lecture_preq": [
+      "MAT322",
+      "MAT322E"
+    ]
   },
   "MCH100L": {
     "lecture_name": "Maritime Chemistry  Laboratory",
@@ -249,7 +359,12 @@
   },
   "MEK207E": {
     "lecture_name": "Engineering Mechanics",
-    "lecture_preq": []
+    "lecture_preq": [
+      "MAT102",
+      "MAT102E",
+      "MAT104",
+      "MAT104E"
+    ]
   },
   "MEN431": {
     "lecture_name": "Engine Room Mangm.& Leadership",
@@ -257,11 +372,16 @@
   },
   "MET492E": {
     "lecture_name": "Design Project",
-    "lecture_preq": []
+    "lecture_preq": [
+      "bitirme_onsart"
+    ]
   },
   "MIM484": {
     "lecture_name": "Uygulama Projesi",
-    "lecture_preq": []
+    "lecture_preq": [
+      "MIM244",
+      "MIM244E"
+    ]
   },
   "MOD371": {
     "lecture_name": "Intr. to World Affairs",
@@ -269,11 +389,15 @@
   },
   "MRE492": {
     "lecture_name": "Design Project",
-    "lecture_preq": []
+    "lecture_preq": [
+      "bitirme_onsart"
+    ]
   },
   "MRT492": {
     "lecture_name": "Graduation Project",
-    "lecture_preq": []
+    "lecture_preq": [
+      "bitirme_onsart"
+    ]
   },
   "MTO497E": {
     "lecture_name": "Atmospheric Optics & Acoustics",
@@ -281,7 +405,9 @@
   },
   "MTH301": {
     "lecture_name": "Numerical Methods",
-    "lecture_preq": []
+    "lecture_preq": [
+      "MTH102"
+    ]
   },
   "MTM421": {
     "lecture_name": "Ship Handling and Maneuvering",
@@ -289,19 +415,35 @@
   },
   "MTR492": {
     "lecture_name": "Bitirme Çalışması",
-    "lecture_preq": []
+    "lecture_preq": [
+      "bitirme_onsart"
+    ]
   },
   "MST492": {
     "lecture_name": "Vibrations of Marine Eng. Sys.",
-    "lecture_preq": []
+    "lecture_preq": [
+      "bitirme_onsart"
+    ]
   },
   "MUH453E": {
     "lecture_name": "Optimal Control Theory",
-    "lecture_preq": []
+    "lecture_preq": [
+      "MAT201",
+      "MAT201E",
+      "MAT210",
+      "MAT210E",
+      "MAT232",
+      "MAT232E"
+    ]
   },
   "MUK210E": {
     "lecture_name": "Strength of Materials II",
-    "lecture_preq": []
+    "lecture_preq": [
+      "MUK209",
+      "MUK209E",
+      "MUK203",
+      "MUK203E"
+    ]
   },
   "MUT4332": {
     "lecture_name": "Prozodi",
@@ -325,11 +467,17 @@
   },
   "PEM492E": {
     "lecture_name": "Graduation Project",
-    "lecture_preq": []
+    "lecture_preq": [
+      "bitirme_onsart",
+      "PEM411",
+      "PEM411E"
+    ]
   },
   "PET492E": {
     "lecture_name": "Graduation Project",
-    "lecture_preq": []
+    "lecture_preq": [
+      "bitirme_onsart"
+    ]
   },
   "PHE101": {
     "lecture_name": "Physical Educaion",
@@ -341,7 +489,10 @@
   },
   "RES112E": {
     "lecture_name": "Computer Aided Tech Drawing",
-    "lecture_preq": []
+    "lecture_preq": [
+      "RES105",
+      "RES105E"
+    ]
   },
   "SBP497E": {
     "lecture_name": "Rural Settlements and Problems",
@@ -357,7 +508,9 @@
   },
   "STI102": {
     "lecture_name": "Statistics II",
-    "lecture_preq": []
+    "lecture_preq": [
+      "STI101"
+    ]
   },
   "TEB4726": {
     "lecture_name": "İleri İngilizce-IV",
@@ -365,23 +518,43 @@
   },
   "TEK321": {
     "lecture_name": "Makina Elemanları",
-    "lecture_preq": []
+    "lecture_preq": [
+      "MUK207",
+      "MUK207E"
+    ]
   },
   "TEL492": {
     "lecture_name": "Bitirme Çalışması",
-    "lecture_preq": []
+    "lecture_preq": [
+      "bitirme_onsart"
+    ]
   },
   "TER206E": {
     "lecture_name": "Thermodynamics II",
-    "lecture_preq": []
+    "lecture_preq": [
+      "TER205",
+      "TER205E"
+    ]
   },
   "TES211E": {
     "lecture_name": "Project III",
-    "lecture_preq": []
+    "lecture_preq": [
+      "TES121E",
+      "EUT124E",
+      "SBP112",
+      "SBP112E",
+      "MIM112",
+      "MIM112E",
+      "MIM116",
+      "MIM116E"
+    ]
   },
   "THO4653": {
     "lecture_name": "Vurmalı Çalgılar VI",
-    "lecture_preq": []
+    "lecture_preq": [
+      "THO3654",
+      "THO3554"
+    ]
   },
   "TUR104": {
     "lecture_name": "Turkish Language II",
@@ -389,11 +562,15 @@
   },
   "UCK492E": {
     "lecture_name": "Graduation Project",
-    "lecture_preq": []
+    "lecture_preq": [
+      "bitirme_onsart"
+    ]
   },
   "UZB492E": {
     "lecture_name": "Graduation Project",
-    "lecture_preq": []
+    "lecture_preq": [
+      "bitirme_onsart"
+    ]
   },
   "YTO301": {
     "lecture_name": "Yab. için Türkçe(İleri Seviye)",
