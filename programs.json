@@ -1,0 +1,141 @@
+{
+  "IN": [
+    "INS",
+    "INSE",
+    "GEO",
+    "GEOE",
+    "CEV",
+    "CEVE"
+  ],
+  "MM": [
+    "MIM",
+    "MIME",
+    "SBP",
+    "SBPE",
+    "EUT",
+    "EUTE",
+    "ICM",
+    "PEM",
+    "PEME"
+  ],
+  "MK": [
+    "MAK",
+    "MAKE",
+    "IML",
+    "IMLE"
+  ],
+  "EE": [
+    "ELH",
+    "EHB",
+    "EHBE",
+    "ELK",
+    "ELKE",
+    "ELE",
+    "TEL",
+    "KOM",
+    "KOME"
+  ],
+  "MD": [
+    "JEO",
+    "JEOE",
+    "JEF",
+    "JEFE",
+    "MAD",
+    "MADE",
+    "PET",
+    "PETE",
+    "CHZ",
+    "CHZE"
+  ],
+  "KM": [
+    "KMM",
+    "KMME",
+    "GID",
+    "GIDE",
+    "MET",
+    "METE"
+  ],
+  "IS": [
+    "ISL",
+    "ISLE",
+    "END",
+    "ENDE",
+    "ECNE"
+  ],
+  "GD": [
+    "DEN",
+    "DENE",
+    "GEM",
+    "GEME"
+  ],
+  "FE": [
+    "MAT",
+    "MATE",
+    "FIZ",
+    "FIZE",
+    "KIM",
+    "KIME",
+    "BIO",
+    "BIOE"
+  ],
+  "UU": [
+    "MTO",
+    "MTOE",
+    "UZB",
+    "UZBE",
+    "UCK",
+    "UCKE"
+  ],
+  "KO": [
+    "TEB",
+    "MTR",
+    "SES",
+    "KMP",
+    "MUT",
+    "MUZ",
+    "MUZE",
+    "CAB",
+    "THO"
+  ],
+  "DZ": [
+    "DUI",
+    "DUIE",
+    "GMI",
+    "GMIE"
+  ],
+  "TK": [
+    "TEK",
+    "TEKE"
+  ],
+  "BB": [
+    "BLG",
+    "BLGE"
+  ],
+  "SN": [
+    "SIS",
+    "SEK",
+    "SIN",
+    "SBL",
+    "SDU",
+    "SGM",
+    "SMT",
+    "STP",
+    "SCE",
+    "MBI",
+    "MCB",
+    "SEN",
+    "EHN"
+  ],
+  "KK": [
+    "MTM",
+    "MEN",
+    "NAE"
+  ],
+  "MY": [
+    "YEB",
+    "YHB",
+    "YGB",
+    "YMB",
+    "YTB"
+  ]
+}
