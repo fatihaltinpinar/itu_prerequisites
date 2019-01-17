@@ -139,11 +139,41 @@ def parse_lectures(program_codes):
     return data
 
 
+# TODO: Add more comments to this function.
+# Parses program pages and returns a dictionary that contains semesters and lectures
+# should be taken that semester.
+def parse_program(program_link):
+    response = requests.get(program_link)
+    program_page = BeautifulSoup(response.content, 'html.parser')
+    semester_tables = program_page.findAll('table', {'class': 'plan'})
+
+    semester_number = 1
+    lecture_data = {}
+
+    for semester in semester_tables:
+        rows = semester.findAll('tr')
+        course_list = []
+        for row in rows:
+            course_codes = row.findAll('td')
+            course_code = course_codes[0].get_text().replace(' ', '')
+            print(course_code)
+            if course_code == 'DersKodu':
+                continue
+            elif course_code == ' ':
+                course_code = course_codes[1].get_text()
+            course_list.append(course_code)
+        lecture_data.update({semester_number: course_list})
+        semester_number += 1
+    return lecture_data
+
+
 def update_lectures():
-    with open('lectures.json', 'w') as f:
-            json.dump(parse_lectures(programCodes), f, indent=2, ensure_ascii=False)
+    with open('lectures.json', 'w') as lectures_file:
+            json.dump(parse_lectures(programCodes), lectures_file, indent=2, ensure_ascii=False)
 
 
 # For running parser.py alone
 if __name__ == '__main__':
-    update_lectures()
+    with open('test.json', 'w') as f:
+        json.dump(parse_program('http://www.sis.itu.edu.tr/tr/dersplan/plan/BLGE/201810.html'), f, indent=2)
+
