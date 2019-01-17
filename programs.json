@@ -1,141 +1,141 @@
 {
-  "IN": [
-    "INS",
-    "INSE",
-    "GEO",
-    "GEOE",
-    "CEV",
-    "CEVE"
-  ],
-  "MM": [
-    "MIM",
-    "MIME",
-    "SBP",
-    "SBPE",
-    "EUT",
-    "EUTE",
-    "ICM",
-    "PEM",
-    "PEME"
-  ],
-  "MK": [
-    "MAK",
-    "MAKE",
-    "IML",
-    "IMLE"
-  ],
-  "EE": [
-    "ELH",
-    "EHB",
-    "EHBE",
-    "ELK",
-    "ELKE",
-    "ELE",
-    "TEL",
-    "KOM",
-    "KOME"
-  ],
-  "MD": [
-    "JEO",
-    "JEOE",
-    "JEF",
-    "JEFE",
-    "MAD",
-    "MADE",
-    "PET",
-    "PETE",
-    "CHZ",
-    "CHZE"
-  ],
-  "KM": [
-    "KMM",
-    "KMME",
-    "GID",
-    "GIDE",
-    "MET",
-    "METE"
-  ],
-  "IS": [
-    "ISL",
-    "ISLE",
-    "END",
-    "ENDE",
-    "ECNE"
-  ],
-  "GD": [
-    "DEN",
-    "DENE",
-    "GEM",
-    "GEME"
-  ],
-  "FE": [
-    "MAT",
-    "MATE",
-    "FIZ",
-    "FIZE",
-    "KIM",
-    "KIME",
-    "BIO",
-    "BIOE"
-  ],
-  "UU": [
-    "MTO",
-    "MTOE",
-    "UZB",
-    "UZBE",
-    "UCK",
-    "UCKE"
-  ],
-  "KO": [
-    "TEB",
-    "MTR",
-    "SES",
-    "KMP",
-    "MUT",
-    "MUZ",
-    "MUZE",
-    "CAB",
-    "THO"
-  ],
-  "DZ": [
-    "DUI",
-    "DUIE",
-    "GMI",
-    "GMIE"
-  ],
-  "TK": [
-    "TEK",
-    "TEKE"
-  ],
-  "BB": [
-    "BLG",
-    "BLGE"
-  ],
-  "SN": [
-    "SIS",
-    "SEK",
-    "SIN",
-    "SBL",
-    "SDU",
-    "SGM",
-    "SMT",
-    "STP",
-    "SCE",
-    "MBI",
-    "MCB",
-    "SEN",
-    "EHN"
-  ],
-  "KK": [
-    "MTM",
-    "MEN",
-    "NAE"
-  ],
-  "MY": [
-    "YEB",
-    "YHB",
-    "YGB",
-    "YMB",
-    "YTB"
-  ]
+  "IN": {
+    "INS": "http://www.sis.itu.edu.tr/tr/dersplan/plan/INS/201810.html",
+    "INSE": "http://www.sis.itu.edu.tr/tr/dersplan/plan/INSE/201810.html",
+    "GEO": "http://www.sis.itu.edu.tr/tr/dersplan/plan/GEO/201810.html",
+    "GEOE": "http://www.sis.itu.edu.tr/tr/dersplan/plan/GEOE/201810.html",
+    "CEV": "http://www.sis.itu.edu.tr/tr/dersplan/plan/CEV/201810.html",
+    "CEVE": "http://www.sis.itu.edu.tr/tr/dersplan/plan/CEVE/201810.html"
+  },
+  "MM": {
+    "MIM": "http://www.sis.itu.edu.tr/tr/dersplan/plan/MIM/201810.html",
+    "MIME": "http://www.sis.itu.edu.tr/tr/dersplan/plan/MIME/201810.html",
+    "SBP": "http://www.sis.itu.edu.tr/tr/dersplan/plan/SBP/201810.html",
+    "SBPE": "http://www.sis.itu.edu.tr/tr/dersplan/plan/SBPE/201810.html",
+    "EUT": "http://www.sis.itu.edu.tr/tr/dersplan/plan/EUT/201010.html",
+    "EUTE": "http://www.sis.itu.edu.tr/tr/dersplan/plan/EUTE/201810.html",
+    "ICM": "http://www.sis.itu.edu.tr/tr/dersplan/plan/ICM/201810.html",
+    "PEM": "http://www.sis.itu.edu.tr/tr/dersplan/plan/PEM/000000.html",
+    "PEME": "http://www.sis.itu.edu.tr/tr/dersplan/plan/PEME/201810.html"
+  },
+  "MK": {
+    "MAK": "http://www.sis.itu.edu.tr/tr/dersplan/plan/MAK/201810.html",
+    "MAKE": "http://www.sis.itu.edu.tr/tr/dersplan/plan/MAKE/201210.html",
+    "IML": "http://www.sis.itu.edu.tr/tr/dersplan/plan/IML/201810.html",
+    "IMLE": "http://www.sis.itu.edu.tr/tr/dersplan/plan/IMLE/201510.html"
+  },
+  "EE": {
+    "ELH": "http://www.sis.itu.edu.tr/tr/dersplan/plan/ELH/000000.html",
+    "EHB": "http://www.sis.itu.edu.tr/tr/dersplan/plan/EHB/201810.html",
+    "EHBE": "http://www.sis.itu.edu.tr/tr/dersplan/plan/EHBE/201810.html",
+    "ELK": "http://www.sis.itu.edu.tr/tr/dersplan/plan/ELK/201810.html",
+    "ELKE": "http://www.sis.itu.edu.tr/tr/dersplan/plan/ELKE/201910.html",
+    "ELE": "http://www.sis.itu.edu.tr/tr/dersplan/plan/ELE/201010.html",
+    "TEL": "http://www.sis.itu.edu.tr/tr/dersplan/plan/TEL/201010.html",
+    "KOM": "http://www.sis.itu.edu.tr/tr/dersplan/plan/KOM/201810.html",
+    "KOME": "http://www.sis.itu.edu.tr/tr/dersplan/plan/KOME/201910.html"
+  },
+  "MD": {
+    "JEO": "http://www.sis.itu.edu.tr/tr/dersplan/plan/JEO/201810.html",
+    "JEOE": "http://www.sis.itu.edu.tr/tr/dersplan/plan/JEOE/201210.html",
+    "JEF": "http://www.sis.itu.edu.tr/tr/dersplan/plan/JEF/201810.html",
+    "JEFE": "http://www.sis.itu.edu.tr/tr/dersplan/plan/JEFE/201110.html",
+    "MAD": "http://www.sis.itu.edu.tr/tr/dersplan/plan/MAD/201810.html",
+    "MADE": "http://www.sis.itu.edu.tr/tr/dersplan/plan/MADE/201210.html",
+    "PET": "http://www.sis.itu.edu.tr/tr/dersplan/plan/PET/201010.html",
+    "PETE": "http://www.sis.itu.edu.tr/tr/dersplan/plan/PETE/201810.html",
+    "CHZ": "http://www.sis.itu.edu.tr/tr/dersplan/plan/CHZ/201810.html",
+    "CHZE": "http://www.sis.itu.edu.tr/tr/dersplan/plan/CHZE/201410.html"
+  },
+  "KM": {
+    "KMM": "http://www.sis.itu.edu.tr/tr/dersplan/plan/KMM/201810.html",
+    "KMME": "http://www.sis.itu.edu.tr/tr/dersplan/plan/KMME/201210.html",
+    "GID": "http://www.sis.itu.edu.tr/tr/dersplan/plan/GID/201810.html",
+    "GIDE": "http://www.sis.itu.edu.tr/tr/dersplan/plan/GIDE/201410.html",
+    "MET": "http://www.sis.itu.edu.tr/tr/dersplan/plan/MET/201810.html",
+    "METE": "http://www.sis.itu.edu.tr/tr/dersplan/plan/METE/201810.html"
+  },
+  "IS": {
+    "ISL": "http://www.sis.itu.edu.tr/tr/dersplan/plan/ISL/201810.html",
+    "ISLE": "http://www.sis.itu.edu.tr/tr/dersplan/plan/ISLE/201810.html",
+    "END": "http://www.sis.itu.edu.tr/tr/dersplan/plan/END/201810.html",
+    "ENDE": "http://www.sis.itu.edu.tr/tr/dersplan/plan/ENDE/201810.html",
+    "ECNE": "http://www.sis.itu.edu.tr/tr/dersplan/plan/ECNE/201810.html"
+  },
+  "GD": {
+    "DEN": "http://www.sis.itu.edu.tr/tr/dersplan/plan/DEN/201810.html",
+    "DENE": "http://www.sis.itu.edu.tr/tr/dersplan/plan/DENE/201310.html",
+    "GEM": "http://www.sis.itu.edu.tr/tr/dersplan/plan/GEM/201810.html",
+    "GEME": "http://www.sis.itu.edu.tr/tr/dersplan/plan/GEME/201310.html"
+  },
+  "FE": {
+    "MAT": "http://www.sis.itu.edu.tr/tr/dersplan/plan/MAT/201810.html",
+    "MATE": "http://www.sis.itu.edu.tr/tr/dersplan/plan/MATE/201110.html",
+    "FIZ": "http://www.sis.itu.edu.tr/tr/dersplan/plan/FIZ/201810.html",
+    "FIZE": "http://www.sis.itu.edu.tr/tr/dersplan/plan/FIZE/201110.html",
+    "KIM": "http://www.sis.itu.edu.tr/tr/dersplan/plan/KIM/201810.html",
+    "KIME": "http://www.sis.itu.edu.tr/tr/dersplan/plan/KIME/201110.html",
+    "BIO": "http://www.sis.itu.edu.tr/tr/dersplan/plan/BIO/201010.html",
+    "BIOE": "http://www.sis.itu.edu.tr/tr/dersplan/plan/BIOE/201810.html"
+  },
+  "UU": {
+    "MTO": "http://www.sis.itu.edu.tr/tr/dersplan/plan/MTO/201810.html",
+    "MTOE": "http://www.sis.itu.edu.tr/tr/dersplan/plan/MTOE/201110.html",
+    "UZB": "http://www.sis.itu.edu.tr/tr/dersplan/plan/UZB/201010.html",
+    "UZBE": "http://www.sis.itu.edu.tr/tr/dersplan/plan/UZBE/201810.html",
+    "UCK": "http://www.sis.itu.edu.tr/tr/dersplan/plan/UCK/201810.html",
+    "UCKE": "http://www.sis.itu.edu.tr/tr/dersplan/plan/UCKE/201110.html"
+  },
+  "KO": {
+    "TEB": "http://www.sis.itu.edu.tr/tr/dersplan/plan/TEB/200610.html",
+    "MTR": "http://www.sis.itu.edu.tr/tr/dersplan/plan/MTR/201110.html",
+    "SES": "http://www.sis.itu.edu.tr/tr/dersplan/plan/SES/201310.html",
+    "KMP": "http://www.sis.itu.edu.tr/tr/dersplan/plan/KMP/201110.html",
+    "MUT": "http://www.sis.itu.edu.tr/tr/dersplan/plan/MUT/201310.html",
+    "MUZ": "http://www.sis.itu.edu.tr/tr/dersplan/plan/MUZ/201110.html",
+    "MUZE": "http://www.sis.itu.edu.tr/tr/dersplan/plan/MUZE/201210.html",
+    "CAB": "http://www.sis.itu.edu.tr/tr/dersplan/plan/CAB/201110.html",
+    "THO": "http://www.sis.itu.edu.tr/tr/dersplan/plan/THO/201310.html"
+  },
+  "DZ": {
+    "DUI": "http://www.sis.itu.edu.tr/tr/dersplan/plan/DUI/201810.html",
+    "DUIE": "http://www.sis.itu.edu.tr/tr/dersplan/plan/DUIE/201410.html",
+    "GMI": "http://www.sis.itu.edu.tr/tr/dersplan/plan/GMI/201810.html",
+    "GMIE": "http://www.sis.itu.edu.tr/tr/dersplan/plan/GMIE/201210.html"
+  },
+  "TK": {
+    "TEK": "http://www.sis.itu.edu.tr/tr/dersplan/plan/TEK/201010.html",
+    "TEKE": "http://www.sis.itu.edu.tr/tr/dersplan/plan/TEKE/201810.html"
+  },
+  "BB": {
+    "BLG": "http://www.sis.itu.edu.tr/tr/dersplan/plan/BLG/201810.html",
+    "BLGE": "http://www.sis.itu.edu.tr/tr/dersplan/plan/BLGE/201810.html"
+  },
+  "SN": {
+    "SIS": "http://www.sis.itu.edu.tr/tr/dersplan/plan/SIS/201410.html",
+    "SEK": "http://www.sis.itu.edu.tr/tr/dersplan/plan/SEK/201010.html",
+    "SIN": "http://www.sis.itu.edu.tr/tr/dersplan/plan/SIN/201810.html",
+    "SBL": "http://www.sis.itu.edu.tr/tr/dersplan/plan/SBL/201910.html",
+    "SDU": "http://www.sis.itu.edu.tr/tr/dersplan/plan/SDU/201910.html",
+    "SGM": "http://www.sis.itu.edu.tr/tr/dersplan/plan/SGM/201910.html",
+    "SMT": "http://www.sis.itu.edu.tr/tr/dersplan/plan/SMT/201710.html",
+    "STP": "http://www.sis.itu.edu.tr/tr/dersplan/plan/STP/201710.html",
+    "SCE": "http://www.sis.itu.edu.tr/tr/dersplan/plan/SCE/201310.html",
+    "MBI": "http://www.sis.itu.edu.tr/tr/dersplan/plan/MBI/201910.html",
+    "MCB": "http://www.sis.itu.edu.tr/tr/dersplan/plan/MCB/201010.html",
+    "SEN": "http://www.sis.itu.edu.tr/tr/dersplan/plan/SEN/201910.html",
+    "EHN": "http://www.sis.itu.edu.tr/tr/dersplan/plan/EHN/201910.html"
+  },
+  "KK": {
+    "MTM": "http://www.sis.itu.edu.tr/tr/dersplan/plan/MTM/201610.html",
+    "MEN": "http://www.sis.itu.edu.tr/tr/dersplan/plan/MEN/201610.html",
+    "NAE": "http://www.sis.itu.edu.tr/tr/dersplan/plan/NAE/201510.html"
+  },
+  "MY": {
+    "YEB": "http://www.sis.itu.edu.tr/tr/dersplan/plan/YEB/000000.html",
+    "YHB": "http://www.sis.itu.edu.tr/tr/dersplan/plan/YHB/000000.html",
+    "YGB": "http://www.sis.itu.edu.tr/tr/dersplan/plan/YGB/000000.html",
+    "YMB": "http://www.sis.itu.edu.tr/tr/dersplan/plan/YMB/000000.html",
+    "YTB": "http://www.sis.itu.edu.tr/tr/dersplan/plan/YTB/000000.html"
+  }
 }
