@@ -136,7 +136,6 @@ def parse_lectures(program_codes):
         #               'lecture_preq' : lecture_preq
         # }
 
-
     return data
 
 
@@ -148,7 +147,7 @@ def parse_program(program_link):
     program_page = BeautifulSoup(response.content, 'html.parser')
     semester_tables = program_page.findAll('table', {'class': 'plan'})
 
-    semester_number = 1
+    semester_number = 0
     lecture_data = {}
 
     for semester in semester_tables:
@@ -175,6 +174,6 @@ def update_lectures():
 
 # For running parser.py alone
 if __name__ == '__main__':
-    # with open('test.json', 'w') as f:
-    #     json.dump(parse_program('http://www.sis.itu.edu.tr/tr/dersplan/plan/BLGE/201810.html'), f, indent=2)
-    update_lectures()
+    with open('test.json', 'w') as f:
+        json.dump(parse_program('http://www.sis.itu.edu.tr/tr/dersplan/plan/BLGE/201810.html'), f, indent=2)
+    # update_lectures()
