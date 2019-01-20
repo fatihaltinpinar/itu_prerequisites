@@ -121,6 +121,7 @@ def parse_lectures(program_codes):
                 lecture_data = {lecture_id: {'lecture_name': lecture_name,
                                              'lecture_preq': lecture_preq
                                              }}
+                data.update(lecture_data)
         except AttributeError as error:
             print('This page is missing stuff! Lecture: ', program_code)
             print(error)
@@ -134,7 +135,7 @@ def parse_lectures(program_codes):
         #               'lecture_name' : lecture_name
         #               'lecture_preq' : lecture_preq
         # }
-        data.update(lecture_data)
+
 
     return data
 
@@ -174,6 +175,6 @@ def update_lectures():
 
 # For running parser.py alone
 if __name__ == '__main__':
-    with open('test.json', 'w') as f:
-        json.dump(parse_program('http://www.sis.itu.edu.tr/tr/dersplan/plan/BLGE/201810.html'), f, indent=2)
-
+    # with open('test.json', 'w') as f:
+    #     json.dump(parse_program('http://www.sis.itu.edu.tr/tr/dersplan/plan/BLGE/201810.html'), f, indent=2)
+    update_lectures()
