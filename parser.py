@@ -140,6 +140,7 @@ def parse_lectures(program_codes):
 
 
 # TODO: Add more comments to this function.
+#  add lectures that do not have a lecture_code into the lectures.json
 # Parses program pages and returns a dictionary that contains semesters and lectures
 # should be taken that semester.
 def parse_program(program_link):
