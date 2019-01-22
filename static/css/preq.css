@@ -1,7 +1,38 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    max-width: 1500px;
+    margin:auto;
+
+}
+
+table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+td {
+    border: 1px solid black;
+
+}
+
+.semester {
+    text-align: center;
+}
+
 .lecture_cell{
+    display: inline-block;
+    width: 125px;
+    height: 75px;
+    background-color: yellow;
     overflow: hidden;
-    width: 50px;
-    height: 100px;
-    background-color: red;
-    color:white;
+}
+
+.node_cell {
+    height: 35px;
+    width: 35px;
+    min-width: 35px;
 }
