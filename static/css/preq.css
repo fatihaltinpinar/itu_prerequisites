@@ -4,18 +4,27 @@ html, body {
 }
 
 .content {
-    max-width: 1500px;
+    max-width: 1300px;
     margin:auto;
+    max-height: 1200px;
 
 }
 
 table {
+    position: absolute;
     table-layout: fixed;
     border-collapse: collapse;
     border: 1px solid black;
 }
+canvas{
+    position: absolute;
+    background-color: black;
+
+}
+
 td {
     border: 1px solid black;
+
 
 }
 
