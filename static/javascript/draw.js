@@ -23,6 +23,7 @@ function getCenterPos(element) {
 }
 
 function start(lecture_id, color){
+    ctx.beginPath();
     ctx.strokeStyle = color;
 
     let lecture = document.getElementById(lecture_id);
