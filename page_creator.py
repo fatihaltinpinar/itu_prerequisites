@@ -194,7 +194,7 @@ def update_pages():
     with open('lectures.json') as lectures_file:
         lecture_data = json.load(lectures_file)
     with open('programs.json') as programs_file:
-        programs_data = programs_file
+        programs_data = json.load(programs_file)
 
     for faculty_dict in programs_data.values():
         for program_code, program_link in faculty_dict.items():
@@ -210,15 +210,4 @@ def update_pages():
 
 
 if __name__ == '__main__':
-    with open('lectures.json') as lectures_file:
-        l_data = json.load(lectures_file)
-    with open('test.json') as program_file:
-        p_data = json.load(program_file)
-    arr_ = create_array(p_data, l_data)
-
-    # find_connections(arr_, l_data)
-
-    # table_ = create_table(arr_)
-
-    # with open('test.html', 'w') as test_file:
-    #     test_file.write(table_)
+    update_pages()
