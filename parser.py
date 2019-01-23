@@ -149,7 +149,7 @@ def parse_program(program_link):
     semester_tables = program_page.findAll('table', {'class': 'plan'})
 
     semester_number = 0
-    lecture_data = {}
+    program_data = {}
 
     for semester in semester_tables:
         rows = semester.findAll('tr')
@@ -163,9 +163,9 @@ def parse_program(program_link):
             elif course_code == ' ':
                 course_code = course_codes[1].get_text()
             course_list.append(course_code)
-        lecture_data.update({semester_number: course_list})
+        program_data.update({semester_number: course_list})
         semester_number += 1
-    return lecture_data
+    return program_data
 
 
 def update_lectures():

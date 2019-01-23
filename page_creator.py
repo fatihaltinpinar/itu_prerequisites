@@ -1,4 +1,5 @@
 import json
+import parser
 
 # We are using classes for management of data and stuff. I wanted to put everything into a 20by15 array
 # so everything will a have coordinate which will make path finding very easy.
@@ -156,13 +157,56 @@ def print_array(arr):
 
 
 def create_page(title, table, script):
-    html = ''
+    html = f'''<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>{title}</title>
+    <meta name="description" content="Fancy charts instead of http://www.sis.itu.edu.tr/eng/prerequisites/">
+    <meta name="keywords" content="sis, itu, ön şart, on sart, prerequisites, istanbul teknik üniversitesi, itü">
+
+	<meta name="author" content="faati">
+	<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" href="../css/preq.css"/>
+
+
+</head>
+<body>
+<div class="topBar"></div>
+<div class="content">
+    
+    <canvas id="canvas" height="1200px" width="1300px"></canvas>
+    {table}
+</div>
+<div class="bottomBar"></div>
+<script src="../javascript/draw.js"></script>
+<script>
+    {script}
+</script>
+</body>
+</html>'''
     return html
 
 
 # Hope this we can write something into this function lmao
 def update_pages():
-    print('HI. I\'ll update every page one day wohoo!')
+    with open('lectures.json') as lectures_file:
+        lecture_data = json.load(lectures_file)
+    with open('programs.json') as programs_file:
+        programs_data = programs_file
+
+    for faculty_dict in programs_data.values():
+        for program_code, program_link in faculty_dict.items():
+            print(f'Creating the prerequisite page of {program_code} which located at {program_link}')
+            title = program_code
+            program_data = parser.parse_program(program_link)
+            arr = create_array(program_data, lecture_data)
+            table = create_table(arr)
+            script = find_connections(arr, lecture_data)
+
+            with open('onsart/prerequisite_pages/' + program_code + '.html', 'w') as htmlfile:
+                htmlfile.write(create_page(title, table, script))
 
 
 if __name__ == '__main__':
