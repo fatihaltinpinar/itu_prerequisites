@@ -157,7 +157,7 @@ def parse_program(program_link):
         for row in rows:
             course_codes = row.findAll('td')
             course_code = course_codes[0].get_text().replace(' ', '')
-            print(course_code)
+            # print(course_code)
             if course_code == 'DersKodu':
                 continue
             elif course_code == ' ':
@@ -175,6 +175,5 @@ def update_lectures():
 
 # For running parser.py alone
 if __name__ == '__main__':
-    with open('test.json', 'w') as f:
-        json.dump(parse_program('http://www.sis.itu.edu.tr/tr/dersplan/plan/BLGE/201810.html'), f, indent=2)
     # update_lectures()
+    print('it takes really long if you really want to update it change the source code and uncomment line above')
