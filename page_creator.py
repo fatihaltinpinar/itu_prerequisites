@@ -1,8 +1,8 @@
 import json
 
-
 # We are using classes for management of data and stuff. I wanted to put everything into a 20by15 array
 # so everything will a have coordinate which will make path finding very easy.
+
 
 # Lecture class contains lecture code, name, it's prerequisites and position of it in the array.
 class Lecture:
@@ -113,6 +113,37 @@ def create_table(arr):
     return table
 
 
+def find_location(preq_lecture, arr, column):
+    for x in range(0, column, 2):
+        for y in range(0, 20, 2):
+            if arr[y][x].lecture_code == preq_lecture:
+                return x, y
+    return -1, -1
+
+
+def find_connections(arr, lecture_data):
+    script = ''
+    for column in range(2, 15, 2):
+        for row in range(0, 20, 2):
+            lecture_code = arr[row][column].lecture_code
+            if lecture_code is not None:
+                try:
+                    prerequisites = lecture_data[lecture_code]['lecture_preq']
+                    print(prerequisites)
+                except KeyError:
+                    continue
+                if len(prerequisites) == 0:
+                    continue
+                else:
+                    for preq_lecture in prerequisites:
+                        preq_x, preq_y = find_location(preq_lecture, arr, column)
+                        if preq_x != -1:
+                            script += f"connect_lectures({preq_y}, {preq_x}, {row}, {column});\n"
+                            # print(f'lecture {lecture_code} is connected to {arr[preq_y][preq_x].lecture_code} located'
+                            #       f' at row= {preq_y}, column={preq_x}')
+    return script
+
+
 # Printing the array in console for debugging.
 def print_array(arr):
     for row in arr:
@@ -122,6 +153,11 @@ def print_array(arr):
             else:
                 print('x', end='\t')
         print()
+
+
+def create_page(title, table, script):
+    html = ''
+    return html
 
 
 # Hope this we can write something into this function lmao
@@ -135,7 +171,10 @@ if __name__ == '__main__':
     with open('test.json') as program_file:
         p_data = json.load(program_file)
     arr_ = create_array(p_data, l_data)
-    table_ = create_table(arr_)
 
-    with open('test.html', 'w') as test_file:
-        test_file.write(table_)
+    # find_connections(arr_, l_data)
+
+    # table_ = create_table(arr_)
+
+    # with open('test.html', 'w') as test_file:
+    #     test_file.write(table_)
