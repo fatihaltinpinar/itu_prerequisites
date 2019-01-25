@@ -215,11 +215,20 @@ def print_array(arr):
 
 
 def create_page(title, table, script):
-    html = f'''<!DOCTYPE html>
+    html = '''<!DOCTYPE html>
 <html lang="tr">
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133197198-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'UA-133197198-1');
+    </script>
     <meta charset="UTF-8">
-    <title>{title}</title>
+    <title>%s</title>
     <meta name="description" content="Fancy charts instead of http://www.sis.itu.edu.tr/eng/prerequisites/">
     <meta name="keywords" content="sis, itu, ön şart, on sart, prerequisites, istanbul teknik üniversitesi, itü">
 
@@ -235,15 +244,15 @@ def create_page(title, table, script):
 <div class="content">
     
     <canvas id="canvas" height="1200px" width="1300px"></canvas>
-    {table}
+    %s
 </div>
 <div class="bottomBar"></div>
 <script src="../javascript/draw.js"></script>
 <script>
-    {script}
+    %s
 </script>
 </body>
-</html>'''
+</html>''' % (title, table, script)
     return html
 
 
