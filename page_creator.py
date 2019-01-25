@@ -20,7 +20,7 @@ class Lecture:
         self.prerequisites = prerequisites
 
 
-# Class do not need any information other than their positions.
+# Node class do not need to carry any information other than it's positions.
 class Node:
     def __init__(self, y, x):
         self.x = x
@@ -115,6 +115,8 @@ def create_table(arr):
     return table
 
 
+# Finds the location of given lecture by looking every cell in the array and checking the lecture_codes if any of them
+# match. If it cannot find lecture it returns -1 for both coordinates.
 def find_location(preq_lecture, arr, column):
     for x in range(0, column, 2):
         for y in range(0, 20, 2):
@@ -123,8 +125,12 @@ def find_location(preq_lecture, arr, column):
     return -1, -1
 
 
+# This function contains the connection logic. It returns the JavaScript code that'll be added to the end of the html
+# page. Thus connections can be drawn. I could have done this in JavaScript by just typing connect and
+# lecture positions. But I wanted the logic to be here in Python.
 def connect(preq_y, preq_x, lect_y, lect_x):
     script = ''
+
     # start('0_0');connect('0_1');connect('1_1');connect('1_5');connect('0_5');end('0_6') // on same line
     # start('0_0');end('0_2') // side by side
     if preq_y == lect_y:
@@ -165,6 +171,7 @@ def connect(preq_y, preq_x, lect_y, lect_x):
     return script
 
 
+# Check for every connection one by one.
 def find_connections(arr, lecture_data):
     script = ''
     for column in range(2, 15, 2):
@@ -174,10 +181,16 @@ def find_connections(arr, lecture_data):
                 try:
                     prerequisites = lecture_data[lecture_code]['lecture_preq']
                     # print(prerequisites)
+                # If the lecture does not exist in lectures.json(lectures like dan101 and semester specific lectures)
+                # we continue over next iteration.
                 except KeyError:
                     continue
+                # We check if it has any prerequisites.
                 if len(prerequisites) == 0:
                     continue
+                # If it does we look for every prerequisite in the array. If they do exist we call the connect function.
+                # Which returns the JavaScript code for that specific connection. We add that to our script string and
+                # return it so it can be added to the html page.
                 else:
                     for preq_lecture in prerequisites:
                         preq_x, preq_y = find_location(preq_lecture, arr, column)
@@ -236,11 +249,17 @@ def create_page(title, table, script):
 
 # Hope this we can write something into this function lmao
 def update_pages():
+
+    # Loading lecture data. Contains lecture's code, full name and prerequisites.
     with open('lectures.json') as lectures_file:
         lecture_data = json.load(lectures_file)
+
+    # Loading programs.json which contains the links to the program pages in http://www.sis.itu.edu.tr/eng/curriculums/
+    # I should have named them curriculum FeelsBadMan
     with open('programs.json') as programs_file:
         programs_data = json.load(programs_file)
 
+    # We go over every link in the programs_data. Parse them and create the page for respected program.
     for faculty_dict in programs_data.values():
         for program_code, program_link in faculty_dict.items():
             print(f'Creating the prerequisite page of {program_code} which located at {program_link}')
@@ -249,14 +268,16 @@ def update_pages():
             try:
                 arr = create_array(program_data, lecture_data)
             except IndexError:
-                print(f'index error while parsing {program_code} located {program_link}')
+                # This error occurs when programs do contain more than 10 lectures in a single semester.
+                print(f'Index error while parsing {program_code} located {program_link}')
                 continue
 
             table = create_table(arr)
             script = find_connections(arr, lecture_data)
 
-            with open('onsart/prerequisite_pages/' + program_code + '.html', 'w') as htmlfile:
-                htmlfile.write(create_page(title, table, script))
+            # Writing the html file.
+            with open('onsart/prerequisite_pages/' + program_code + '.html', 'w') as html_file:
+                html_file.write(create_page(title, table, script))
 
 
 if __name__ == '__main__':

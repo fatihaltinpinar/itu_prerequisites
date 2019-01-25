@@ -139,22 +139,29 @@ def parse_lectures(program_codes):
     return data
 
 
-# TODO: Add more comments to this function.
-#  add lectures that do not have a lecture_code into the lectures.json
 # Parses program pages and returns a dictionary that contains semesters and lectures
 # should be taken that semester.
 def parse_program(program_link):
+    # Gets link and creates the soup.
     response = requests.get(program_link)
     program_page = BeautifulSoup(response.content, 'html.parser')
+
+    # Finding the tables which contains curriculum for that semester.
     semester_tables = program_page.findAll('table', {'class': 'plan'})
 
     semester_number = 0
     program_data = {}
 
+    # Every table that we found in semester_tables represent that semester. We give it a number and parse it one by one.
     for semester in semester_tables:
+        # Going over every row. Every row contains one lecture in it.
         rows = semester.findAll('tr')
         course_list = []
+
         for row in rows:
+            # In a given row first column contains the lecture code and the second one contains the lecture's full name.
+            # We need the second column only if the first column is empty for the given lecture. This occurs for the
+            # elective courses.
             course_codes = row.findAll('td')
             course_code = course_codes[0].get_text().replace(' ', '')
             # print(course_code)
