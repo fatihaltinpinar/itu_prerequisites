@@ -1,6 +1,7 @@
 let canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
 ctx.lineWidth = 3;
+ctx.strokeStyle = '#ff0000';
 let offset_picker = 0;
 let offsets = [];
 
@@ -63,16 +64,16 @@ class Line {
         let conflict = true;
         while (k < offsets.length && true) {
             let i = 0;
-            while (i < lines.length){
-                if(lines[i].getStartPoint().getY() === this.getStartPoint().getY() &&
-                    lines[i].getEndPoint().getY() === this.getEndPoint().getY() &&
+            while (i < lines.length) {
+                if(lines[i].getStartPoint.getY === this.getStartPoint.getY &&
+                    lines[i].getEndPoint.getY === this.getEndPoint.getY &&
                     lines[i].color !== this.color) {
                     this.move(offset, 0);
                     i = 0;
                     conflict = false;
                 }
-                if(lines[i].getStartPoint().getX() === this.getStartPoint().getX()  &&
-                    lines[i].getEndPoint().getX()  === this.getEndPoint().getX()  &&
+                if(lines[i].getStartPoint.getX === this.getStartPoint.getX &&
+                    lines[i].getEndPoint.getX  === this.getEndPoint.getX &&
                     lines[i].color !== this.color) {
                     this.move(0, offset);
                     i = 0;
@@ -83,12 +84,12 @@ class Line {
             k++;
         }
         if(conflict){
-            console.log("Could not draw a line: ", this.getStartPoint().y, ',',
-                        this.getStartPoint().x, ' - ',
-                        this.getEndPoint().y, ',',
-                        this.getEndPoint().x);
+            console.log("Could not draw a line: ", this.getStartPoint.y, ',',
+                        this.getStartPoint.x, ' - ',
+                        this.getEndPoint.y, ',',
+                        this.getEndPoint.x);
         }
-
+        console.log("ses");
         lines.push(this);
     }
 
@@ -104,8 +105,14 @@ class Line {
         this.endPoint.move(y, x);
     }
 
-    draw(){
-        console.log('drawing wohoo');
+    draw() {
+        console.log("drawing line");
+        ctx.beginPath();
+        ctx.moveTo(this.startPoint.x, this.startPoint.y);
+        console.log('moved to ',this.startPoint.x,',', this.startPoint.y);
+        ctx.lineTo(this.endPoint.x, this.endPoint.y);
+        console.log('line to ',this.endPoint.x,',', this.endPoint.y);
+        ctx.stroke();
     }
 }
 
@@ -130,15 +137,12 @@ function getElementSide(element, side) {
     // side = 1 means right
     let rect = element.getBoundingClientRect();
     let y = rect.y - getPos(canvas).y + rect.height / 2;
-    let x;
+    let x = rect.x - getPos(canvas).x;
     if(side === 1){
-        x = rect.x - getPos(canvas).x + rect.width;
-        return {y:y, x:x};
-    }else if(side === -1){ // side = -1 means left
-        x = rect.x - getPos(canvas);
+        return {y:y, x:x + rect.width};
+    }else {
         return {y:y, x:x};
     }
-    return {y:y, x:x};
 }
 
 
@@ -151,18 +155,17 @@ function connect(preq_y, preq_x, lect_y, lect_x) {
             let preq = getElement(preq_y, preq_x);
             let lect = getElement(lect_y, lect_x);
 
-            let start = new Point(getElementSide(preq, 1));
-            let end = new Point(getElementSide(lect, -1));
+            let start = new Point(getElementSide(preq, 1).y, getElementSide(preq, 1).x);
+            let end = new Point(getElementSide(lect, -1).y, getElementSide(lect, -1).x);
+
+            let line = new Line(start, end);
+            line.draw();
         }
-    }
-
-
-    for(let i in lines){
-        i.draw();
     }
 
 }
 
+connect(0,0,0,2);
 
 
 
