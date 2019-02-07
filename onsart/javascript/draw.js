@@ -1,16 +1,14 @@
 let canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
 ctx.lineWidth = 3;
-ctx.strokeStyle = '#ff0000';
 let offset_picker = 0;
-let offsets = [];
+let offsets = [6, -12, 18];
 
 let lines = [];
 
 
-let colors = [];
+let colors = ['#ff0000', '#00ff00', '#0000ff'];
 let color_picker = 0;
-
 
 class Point {
     constructor (y, x) {
@@ -54,7 +52,7 @@ class Point {
 class Line {
     constructor (startPoint, endPoint) {
 
-        this.color = color_picker;
+        this.color = colors[color_picker];
         this.startPoint = startPoint;
         this.endPoint = endPoint;
         this.startPoint.setLineAfter = this;
@@ -62,22 +60,24 @@ class Line {
 
         let k = 0;
         let conflict = true;
-        while (k < offsets.length && true) {
+        while (k < offsets.length && conflict) {
+            conflict = false;
             let i = 0;
             while (i < lines.length) {
-                if(lines[i].getStartPoint.getY === this.getStartPoint.getY &&
-                    lines[i].getEndPoint.getY === this.getEndPoint.getY &&
-                    lines[i].color !== this.color) {
-                    this.move(offset, 0);
-                    i = 0;
-                    conflict = false;
-                }
-                if(lines[i].getStartPoint.getX === this.getStartPoint.getX &&
-                    lines[i].getEndPoint.getX  === this.getEndPoint.getX &&
-                    lines[i].color !== this.color) {
-                    this.move(0, offset);
-                    i = 0;
-                    conflict = false;
+                if(lines[i].getColor !== this.color) {
+                    if (lines[i].isVertical && this.isVertical &&
+                        lines[i].startPoint.getX === this.startPoint.getX){
+                            this.move(0, offsets[k]);
+                            i = 0;
+                            conflict = true;
+                    }
+
+                    if (lines[i].isHorizontal && this.isHorizontal &&
+                        lines[i].startPoint.getY === this.startPoint.getY) {
+                            this.move(offsets[k], 0);
+                            i = 0;
+                            conflict = true;
+                    }
                 }
                 i++;
             }
@@ -95,10 +95,20 @@ class Line {
 
 
     get getStartPoint() {
-        return {y:this.startPoint.y, x:this.startPoint.x}
+        return this.startPoint;
     }
     get getEndPoint() {
-        return {y:this.endPoint.y, x:this.endPoint.x}
+        return this.endPoint;
+    }
+
+    get isVertical(){
+        return this.startPoint.getX === this.endPoint.getX;
+    }
+    get isHorizontal(){
+        return this.startPoint.getY === this.endPoint.getY;
+    }
+    get getColor(){
+        return this.color;
     }
     move(y, x){
         this.startPoint.move(y, x);
@@ -108,6 +118,7 @@ class Line {
     draw() {
         console.log("drawing line");
         ctx.beginPath();
+        ctx.strokeStyle = this.color;
         ctx.moveTo(this.startPoint.x, this.startPoint.y);
         console.log('moved to ',this.startPoint.x,',', this.startPoint.y);
         ctx.lineTo(this.endPoint.x, this.endPoint.y);
@@ -160,6 +171,12 @@ function connect(preq_y, preq_x, lect_y, lect_x) {
 
             let line = new Line(start, end);
             line.draw();
+            color_picker = 1;
+            let line2 = new Line(start, end);
+            line2.draw();
+            color_picker = 2;
+            let line3 = new Line(start, end);
+            line3.draw();
         }
     }
 
