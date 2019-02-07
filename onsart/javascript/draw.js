@@ -1,14 +1,18 @@
-canvas = document.getElementById('canvas');
-ctx = canvas.getContext('2d');
+let canvas = document.getElementById("canvas");
+let ctx = canvas.getContext("2d");
 ctx.lineWidth = 3;
-let offset = 5;
+let offset_picker = 0;
+let offsets = [];
+
 let lines = [];
+
+
 let colors = [];
-color_picker = [];
+let color_picker = 0;
 
 
 class Point {
-    constructor(y, x){
+    constructor (y, x) {
         this.y = y;
         this.x = x;
     }
@@ -17,37 +21,82 @@ class Point {
         return {y:this.y, x:this.x}
     }
 
+    get getY(){
+        return this.y;
+    }
+
+    get getX(){
+        return this.x;
+    }
     move(y, x){
         this.y += y;
         this.x += x;
     }
+
+    set setLineAfter (line) {
+        this.lineAfter = line;
+    }
+
+    set setLineBefore (line) {
+        this.lineBefore = line;
+    }
+
+    get getLineAfter () {
+        return this.lineAfter;
+    }
+
+    get getLineBefore () {
+        return this.lineBefore;
+    }
 }
 
-class Line{
-    constructor(y0, x0, y1, x1){
-        let start = new Point(y0, x0);
-        let end = new Point(y1, x1);
-        this.startPoint = start;
-        this.endPoint = end;
-        // let conflict = false;
-        let i = 0;
-        while (i < lines.length){
-            if(lines[i].startPoint.y === this.startPoint.y && lines[i].endPoint.y === this.endPoint.y){
-                this.move(offset, 0);
-                i = 0;
+class Line {
+    constructor (startPoint, endPoint) {
+
+        this.color = color_picker;
+        this.startPoint = startPoint;
+        this.endPoint = endPoint;
+        this.startPoint.setLineAfter = this;
+        this.endPoint.setLineBefore = this;
+
+        let k = 0;
+        let conflict = true;
+        while (k < offsets.length && true) {
+            let i = 0;
+            while (i < lines.length){
+                if(lines[i].getStartPoint().getY() === this.getStartPoint().getY() &&
+                    lines[i].getEndPoint().getY() === this.getEndPoint().getY() &&
+                    lines[i].color !== this.color) {
+                    this.move(offset, 0);
+                    i = 0;
+                    conflict = false;
+                }
+                if(lines[i].getStartPoint().getX() === this.getStartPoint().getX()  &&
+                    lines[i].getEndPoint().getX()  === this.getEndPoint().getX()  &&
+                    lines[i].color !== this.color) {
+                    this.move(0, offset);
+                    i = 0;
+                    conflict = false;
+                }
+                i++;
             }
-            if(lines[i].startPoint.x === this.startPoint.x && lines[i].endPoint.x === this.endPoint.x){
-                this.move(offset, 0);
-                i = 0;
-            }
-            i++;
+            k++;
         }
+        if(conflict){
+            console.log("Could not draw a line: ", this.getStartPoint().y, ',',
+                        this.getStartPoint().x, ' - ',
+                        this.getEndPoint().y, ',',
+                        this.getEndPoint().x);
+        }
+
         lines.push(this);
     }
-    get getStart(){
+
+
+    get getStartPoint() {
         return {y:this.startPoint.y, x:this.startPoint.x}
     }
-    get getEnd(){
+    get getEndPoint() {
         return {y:this.endPoint.y, x:this.endPoint.x}
     }
     move(y, x){
@@ -77,28 +126,42 @@ function getElement(y, x) {
     return document.getElementById(element_id);
 }
 
-
-
-    // script = f'connect({preq_y}, {preq_x}, {lect_y}, {lect_x});'
-function connect(preq_y, preq_x, lect_y, lect_x) {
-
-
-
+function getElementSide(element, side) {
+    // side = 1 means right
+    let rect = element.getBoundingClientRect();
+    let y = rect.y - getPos(canvas).y + rect.height / 2;
+    let x;
+    if(side === 1){
+        x = rect.x - getPos(canvas).x + rect.width;
+        return {y:y, x:x};
+    }else if(side === -1){ // side = -1 means left
+        x = rect.x - getPos(canvas);
+        return {y:y, x:x};
+    }
+    return {y:y, x:x};
 }
 
 
 
+    // script = f'connect({preq_y}, {preq_x}, {lect_y}, {lect_x});'
+function connect(preq_y, preq_x, lect_y, lect_x) {
+    if(lect_y === preq_y){
+        if((lect_x - preq_x) === 2){
+
+            let preq = getElement(preq_y, preq_x);
+            let lect = getElement(lect_y, lect_x);
+
+            let start = new Point(getElementSide(preq, 1));
+            let end = new Point(getElementSide(lect, -1));
+        }
+    }
 
 
+    for(let i in lines){
+        i.draw();
+    }
 
-
-
-
-
-
-
-
-
+}
 
 
 
