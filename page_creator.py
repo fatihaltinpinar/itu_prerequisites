@@ -129,44 +129,8 @@ def find_location(preq_lecture, arr, column):
 # page. Thus connections can be drawn. I could have done this in JavaScript by just typing connect and
 # lecture positions. But I wanted the logic to be here in Python.
 def connect(preq_y, preq_x, lect_y, lect_x):
-    script = ''
 
-    # start('0_0');connect('0_1');connect('1_1');connect('1_5');connect('0_5');end('0_6') // on same line
-    # start('0_0');end('0_2') // side by side
-    if preq_y == lect_y:
-
-        if lect_x - preq_x == 2:
-            script += f"start('{preq_y}_{preq_x}');"
-            script += f"end('{lect_y}_{lect_x}');\n"
-
-        else:
-            script += f"start('{preq_y}_{preq_x}');"
-            script += f"connect('{preq_y}_{preq_x + 1}');"
-            script += f"connect('{preq_y + 1}_{preq_x + 1}');"
-            script += f"connect('{lect_y + 1}_{lect_x - 1}');"
-            script += f"connect('{lect_y}_{lect_x - 1}');"
-            script += f"end('{lect_y}_{lect_x}');\n"
-
-    # start('14_0');connect('14_preqx+1');connect('lecty+1_preqx+1');connect('1_13');connect('0_13');end('0_14');
-    # // going up
-    elif preq_y > lect_y:
-
-        script += f"start('{preq_y}_{preq_x}');"
-        script += f"connect('{preq_y}_{preq_x + 1}');"
-        script += f"connect('{lect_y + 1}_{preq_x + 1}');"
-        script += f"connect('{lect_y + 1}_{lect_x - 1}');"
-        script += f"connect('{lect_y}_{lect_x - 1}');"
-        script += f"end('{lect_y}_{lect_x}');\n"
-
-    # start('0_0');connect('0_1');connect('5_1');connect('5_5');connect('6_5');end('6_6'); // going down
-    elif preq_y < lect_y:
-
-        script += f"start('{preq_y}_{preq_x}');"
-        script += f"connect('{preq_y}_{preq_x + 1}');"
-        script += f"connect('{lect_y - 1}_{preq_x + 1}');"
-        script += f"connect('{lect_y - 1}_{lect_x - 1}');"
-        script += f"connect('{lect_y}_{lect_x - 1}');"
-        script += f"end('{lect_y}_{lect_x}');\n"
+    script = f'connect({preq_y}, {preq_x}, {lect_y}, {lect_x});'
 
     return script
 
