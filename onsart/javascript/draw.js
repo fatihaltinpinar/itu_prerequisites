@@ -2,7 +2,7 @@ let canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
 ctx.lineWidth = 3;
 let offset_picker = 0;
-let offsets = [6, -12, 18, -24, 30, -36, 42, -48, 54];
+let offsets = [6, -12, 18, -24, 30, -36, 42, -48, 54, -60, 66, -72];
 let lines = [];
 let lastLect = null;
 
@@ -68,6 +68,11 @@ class Line {
 
         let k = 0;
         let conflict = true;
+
+        // TODO:
+        //  Write an function that returns if there is a conflict between two lines or not.
+        //  Our problem is while lines are being drawn on a column lets say they move to side even if they dont collide
+        //  at all.
         while (k < offsets.length && conflict) {
             conflict = false;
             let i = 0;
@@ -77,6 +82,7 @@ class Line {
                         lines[i].startPoint.getX === this.startPoint.getX){
                             this.move(0, offsets[k]);
                             i = 0;
+                            k++;
                             conflict = true;
                     }
 
@@ -84,18 +90,21 @@ class Line {
                         lines[i].startPoint.getY === this.startPoint.getY) {
                             this.move(offsets[k], 0);
                             i = 0;
+                            k++;
                             conflict = true;
                     }
                 }
                 i++;
             }
-            k++;
         }
         if(conflict){
             console.log("Could not draw a line: ", this.getStartPoint.y, ',',
                         this.getStartPoint.x, ' - ',
                         this.getEndPoint.y, ',',
                         this.getEndPoint.x);
+        }
+        if(k === lines.length){
+            console.log("Add more offsets plx!")
         }
         console.log("ses");
         lines.push(this);
