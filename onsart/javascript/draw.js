@@ -2,12 +2,20 @@ let canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
 ctx.lineWidth = 3;
 let offset_picker = 0;
-let offsets = [6, -12, 18];
-
+let offsets = [6, -12, 18, -24, 30, -36, 42, -48, 54];
 let lines = [];
+let lastLect = null;
 
-
-let colors = ['#ff0000', '#00ff00', '#0000ff'];
+let colors = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6',
+		  '#E6B333', '#3366E6', '#999966', '#99FF99', '#B34D4D',
+		  '#80B300', '#809900', '#E6B3B3', '#6680B3', '#66991A',
+		  '#FF99E6', '#CCFF1A', '#FF1A66', '#E6331A', '#33FFCC',
+		  '#66994D', '#B366CC', '#4D8000', '#B33300', '#CC80CC',
+		  '#66664D', '#991AFF', '#E666FF', '#4DB3FF', '#1AB399',
+		  '#E666B3', '#33991A', '#CC9999', '#B3B31A', '#00E680',
+		  '#4D8066', '#809980', '#E6FF80', '#1AFF33', '#999933',
+		  '#FF3380', '#CCCC00', '#66E64D', '#4D80CC', '#9900B3',
+		  '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF'];
 let color_picker = 0;
 
 class Point {
@@ -156,35 +164,103 @@ function getElementSide(element, side) {
     }
 }
 
-
+function createPoint(y, x) {
+    let elem = getElement(y, x);
+    let elemPos = getCenterPos(elem);
+    return new Point(elemPos.y, elemPos.x);
+}
 
     // script = f'connect({preq_y}, {preq_x}, {lect_y}, {lect_x});'
 function connect(preq_y, preq_x, lect_y, lect_x) {
-    if(lect_y === preq_y){
-        if((lect_x - preq_x) === 2){
 
-            let preq = getElement(preq_y, preq_x);
-            let lect = getElement(lect_y, lect_x);
+    if(lastLect === null){
+        lastLect = {y:lect_y, x:lect_x}
+    }else if(lastLect.y !== lect_y || lastLect.x !== lect_x){
+        color_picker++;
+        lastLect = {y:lect_y, x:lect_x};
+    }
 
-            let start = new Point(getElementSide(preq, 1).y, getElementSide(preq, 1).x);
-            let end = new Point(getElementSide(lect, -1).y, getElementSide(lect, -1).x);
 
-            let line = new Line(start, end);
-            line.draw();
-            color_picker = 1;
-            let line2 = new Line(start, end);
-            line2.draw();
-            color_picker = 2;
-            let line3 = new Line(start, end);
-            line3.draw();
-        }
+
+    let path = [];
+    let path_lines = [];
+
+    let preq = getElement(preq_y, preq_x);
+    let start = new Point(getElementSide(preq, 1).y, getElementSide(preq, 1).x);
+    path.push(start);
+
+    // # start('0_0');connect('0_1');connect('1_1');connect('1_5');connect('0_5');end('0_6') // on same line
+    // # start('0_0');end('0_2') // side by side
+    // if preq_y == lect_y:
+    //
+    //     if lect_x - preq_x == 2:
+    //         script += f"start('{preq_y}_{preq_x}');"
+    //         script += f"end('{lect_y}_{lect_x}');\n"
+    //
+    //     else:
+    //         script += f"start('{preq_y}_{preq_x}');"
+    //         script += f"connect('{preq_y}_{preq_x + 1}');"
+    //         script += f"connect('{preq_y + 1}_{preq_x + 1}');"
+    //         script += f"connect('{lect_y + 1}_{lect_x - 1}');"
+    //         script += f"connect('{lect_y}_{lect_x - 1}');"
+    //         script += f"end('{lect_y}_{lect_x}');\n"
+
+    if(lect_y === preq_y && (lect_x - preq_x) !== 2){
+            path.push(createPoint(preq_y, preq_x + 1));
+            path.push(createPoint(preq_y + 1, preq_x + 1));
+            path.push(createPoint(lect_y + 1, lect_x - 1));
+            path.push(createPoint(lect_y, lect_x - 1));
+    }else if (preq_y > lect_y) {
+    //     # start('14_0');connect('14_preqx+1');connect('lecty+1_preqx+1');connect('1_13');connect('0_13');end('0_14');
+    // # // going up
+    // elif preq_y > lect_y:
+    //
+    //     script += f"start('{preq_y}_{preq_x}');"
+
+    //     script += f"connect('{preq_y}_{preq_x + 1}');"
+    //     script += f"connect('{lect_y + 1}_{preq_x + 1}');"
+    //     script += f"connect('{lect_y + 1}_{lect_x - 1}');"
+    //     script += f"connect('{lect_y}_{lect_x - 1}');"
+
+    //     script += f"end('{lect_y}_{lect_x}');\n"
+
+        path.push(createPoint(preq_y, preq_x + 1));
+        path.push(createPoint(lect_y + 1, preq_x + 1));
+        path.push(createPoint(lect_y + 1, lect_x - 1));
+        path.push(createPoint(lect_y, lect_x - 1));
+    }else if(preq_y < lect_y){
+    // # start('0_0');connect('0_1');connect('5_1');connect('5_5');connect('6_5');end('6_6'); // going down
+    // elif preq_y < lect_y:
+    //
+    //     script += f"start('{preq_y}_{preq_x}');"
+
+    //     script += f"connect('{preq_y}_{preq_x + 1}');"
+    //     script += f"connect('{lect_y - 1}_{preq_x + 1}');"
+    //     script += f"connect('{lect_y - 1}_{lect_x - 1}');"
+    //     script += f"connect('{lect_y}_{lect_x - 1}');"
+
+    //     script += f"end('{lect_y}_{lect_x}');\n"
+
+        path.push(createPoint(preq_y, preq_x + 1));
+        path.push(createPoint(lect_y - 1, preq_x + 1));
+        path.push(createPoint(lect_y - 1, lect_x - 1));
+        path.push(createPoint(lect_y, lect_x - 1));
+
+    }
+
+    let lect = getElement(lect_y, lect_x);
+    let end = new Point(getElementSide(lect, -1).y, getElementSide(lect, -1).x);
+    path.push(end);
+    let i = 0;
+    for(i = 0; i < path.length - 1; i++){
+        path_lines.push(new Line(path[i], path[i+1]));
+    }
+
+    for(i = 0; i < path_lines.length; i++){
+        path_lines[i].draw();
     }
 
 }
-
-connect(0,0,0,2);
-
-
 
 
 /*
