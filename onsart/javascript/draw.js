@@ -1,8 +1,17 @@
 let canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
 ctx.lineWidth = 3;
+let offset = 4;
 let offset_picker = 0;
-let offsets = [6, -12, 18, -24, 30, -36, 42, -48, 54, -60, 66, -72];
+let offsets = [];
+for (let i = 1; i*offset < 70; i++){
+    if(i % 2 === 0){
+        offsets.push(offset * i * (-1));
+    }else{
+        offsets.push(offset * i );
+    }
+}
+
 let lines = [];
 let lastLect = null;
 
