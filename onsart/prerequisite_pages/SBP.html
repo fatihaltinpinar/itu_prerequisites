@@ -191,15 +191,7 @@
 <div class="bottomBar"></div>
 <script src="../javascript/draw.js"></script>
 <script>
-    start('0_0');connect('0_1');connect('1_1');connect('1_1');connect('2_1');end('2_2');
-start('4_0');end('4_2');
-start('4_2');end('4_4');
-start('4_4');end('4_6');
-start('4_6');connect('4_7');connect('1_7');connect('1_7');connect('0_7');end('0_8');
-start('0_8');connect('0_9');connect('1_9');connect('1_9');connect('2_9');end('2_10');
-start('2_10');connect('2_11');connect('5_11');connect('5_11');connect('6_11');end('6_12');
-start('6_12');connect('6_13');connect('3_13');connect('3_13');connect('2_13');end('2_14');
-
+    connect(0, 0, 2, 2);connect(4, 0, 4, 2);connect(4, 2, 4, 4);connect(4, 4, 4, 6);connect(4, 6, 0, 8);connect(0, 8, 2, 10);connect(2, 10, 6, 12);connect(6, 12, 2, 14);
 </script>
 </body>
 </html>
