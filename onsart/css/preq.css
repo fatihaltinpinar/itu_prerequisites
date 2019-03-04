@@ -29,20 +29,43 @@ td {
 .semester {
     text-align: center;
 }
-
+/* Lecture styling begins*/
 .lecture_cell{
     display: inline-block;
     width: 125px;
     height: 75px;
     overflow: hidden;
+
+
 }
 
 .lecture_container{
     position: relative;
     height: 100%;
     width: 100%;
-    background-color: yellow;
+    background-color: #ffcb00;
+    text-align: center;
+    border-radius: 7px;
+
+
 }
+.lecture_code{
+    display: inline-block;
+    padding: 5px;
+    margin-top: 5px;
+    border: 2px black solid;
+    border-radius: 5px;
+    background-color: white;
+    border-radius: 7px;
+
+
+}
+
+.lecture_name{
+    min-height: 65%;
+    font-weight: bold;
+}
+/* Lecture styling ends*/
 .node_cell {
     max-height: 35px;
     max-width: 35px;
