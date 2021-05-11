@@ -3,6 +3,19 @@ import json
 from bs4 import BeautifulSoup
 
 # Code for acquiring tuple below.
+def get_program_codes():
+    page = requests.get('https://www.sis.itu.edu.tr/TR/ogrenci/lisans/onsartlar/onsartlar.php')
+    soup = BeautifulSoup(page.text, 'html.parser')
+    options = soup.find_all('option')
+
+    program_codes = []
+
+    for option in options:
+        opt = option.attrs['value']
+        if opt != '':
+            program_codes.append(opt)
+    return program_codes
+
 # page = requests.get('http://www.sis.itu.edu.tr/tr/onsart/').text
 # soup = BeautifulSoup(page, 'html.parser')
 # options = soup.find('option')
