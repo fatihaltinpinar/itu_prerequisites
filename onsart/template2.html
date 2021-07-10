@@ -181,5 +181,19 @@
     <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
     <script type="text/javascript" src="javascript/onsart.js"></script>
 
+<script>
+
+courseDict["BLG1"] = new Course("BLG1", 1, []);
+courseDict["BLG2"] = new Course("BLG2", 2, ["BLG1"]);
+courseDict["BLG3"] = new Course("BLG3", 2, ["BLG1"]);
+courseDict["BLG4"] = new Course("BLG4", 3, ["BLG2"]);
+courseDict["BLG5"] = new Course("BLG5", 3, ["BLG3"]);
+courseDict["BLG6"] = new Course("BLG6", 4, ["BLG5", "BLG4"]);
+courseDict["BLG31"] = new Course("BLG31", 3, []);
+courseDict["BLG32"] = new Course("BLG32", 4, ["BLG31"])
+courseDict["BLG33"] = new Course("BLG33", 5, [])
+
+clearTables();
+</script>
 </body>
 </html>

@@ -148,16 +148,6 @@ class Course{
 
 }
 
-courseDict["BLG1"] = new Course("BLG1", 1, []);
-courseDict["BLG2"] = new Course("BLG2", 2, ["BLG1"]);
-courseDict["BLG3"] = new Course("BLG3", 2, ["BLG1"]);
-courseDict["BLG4"] = new Course("BLG4", 3, ["BLG2"]);
-courseDict["BLG5"] = new Course("BLG5", 3, ["BLG3"]);
-courseDict["BLG6"] = new Course("BLG6", 4, ["BLG5", "BLG4"]);
-courseDict["BLG31"] = new Course("BLG31", 3, []);
-courseDict["BLG32"] = new Course("BLG32", 4, ["BLG31"])
-
-
 // create a network
 var container = document.getElementById('network');
 var data = {
@@ -194,11 +184,13 @@ var options = {
             enabled: true, //change to true to see the other graph
             direction: 'LR',
             nodeSpacing: 100,
+            treeSpacing: 100,
+            levelSeparation: 100,
             sortMethod: 'directed',
             shakeTowards: 'roots',
     }
   },
-  // configure: {},
+  configure: {},
   "physics": {
   "enabled": false,
 }
@@ -209,3 +201,12 @@ network.on('click', function(params){
         courseDict[params.nodes[0]].toggle();
     }
 })
+
+function clearTables(){
+    for(var i=1; i<13; i++){
+        table = document.getElementById("semester"+i);
+        if (table.rows.length <= 1){
+            table.parentNode.removeChild(table);
+        }
+    }
+}
