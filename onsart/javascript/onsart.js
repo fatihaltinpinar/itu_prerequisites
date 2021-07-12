@@ -45,8 +45,9 @@ color_nonselectable = {
 
 
 class Course{
-    constructor(id, semester, preqs){
+    constructor(id, title, semester, preqs){
         this.id = id;
+        this.title = title;
         this.semester = semester;
         this.preqs = [];
         this.isSelectable = false;
@@ -58,7 +59,7 @@ class Course{
         var row = table.insertRow(1);
         row.id = this.id;
         row.onclick = function() {courseDict[this.id].toggle();};
-        row.innerHTML = "<td>" + this.id + "</td><td>" + this.id + "</td><td>"+ this.semester + "</td>"
+        row.innerHTML = "<td>" + this.id + "</td><td>" + this.title + "</td><td>"+ this.semester + "</td>"
 
         for(var i = 0; i<preqs.length; i++){
             if (preqs[i] in courseDict){
@@ -152,7 +153,7 @@ class Course{
         console.log("drawing " + this.id + " " + this.preqTo.length + " " + this.preqs.length);
         if(this.preqTo.length === 0 && this.preqs.length === 0)
             return;
-        nodes.update({id:this.id, level: this.semester, label:this.id, title:"course name goes here"});
+        nodes.update({id:this.id, level: this.semester, label:this.id, title:this.title});
 
         this.drawn = true;
 

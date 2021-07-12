@@ -183,15 +183,15 @@
 
 <script>
 
-courseDict["BLG1"] = new Course("BLG1", 1, []);
-courseDict["BLG2"] = new Course("BLG2", 2, ["BLG1"]);
-courseDict["BLG3"] = new Course("BLG3", 2, ["BLG1"]);
-courseDict["BLG4"] = new Course("BLG4", 3, ["BLG2"]);
-courseDict["BLG5"] = new Course("BLG5", 3, ["BLG3"]);
-courseDict["BLG6"] = new Course("BLG6", 4, ["BLG5", "BLG4"]);
-courseDict["BLG31"] = new Course("BLG31", 3, []);
-courseDict["BLG32"] = new Course("BLG32", 4, ["BLG32"])
-courseDict["BLG33"] = new Course("BLG33", 5, [])
+courseDict["BLG1"] = new Course("BLG1","BLG1 dersi", 1, []);
+courseDict["BLG2"] = new Course("BLG2","BLG2 dersi", 2, ["BLG1"]);
+courseDict["BLG3"] = new Course("BLG3","BLG3 dersi",  2, ["BLG1"]);
+courseDict["BLG4"] = new Course("BLG4","BLG4 valla dersi", 3, ["BLG2"]);
+courseDict["BLG5"] = new Course("BLG5","BLGbEAsh dersi", 3, ["BLG3"]);
+courseDict["BLG6"] = new Course("BLG6", "komedi dukkani",4, ["BLG5", "BLG4"]);
+courseDict["BLG31"] = new Course("BLG31","Baya komik", 3, []);
+courseDict["BLG32"] = new Course("BLG32","waow bruh", 4, ["BLG32"])
+courseDict["BLG33"] = new Course("BLG33","23 nisan kutlu olsun", 5, [])
 
 drawGraph();
 clearTables();
