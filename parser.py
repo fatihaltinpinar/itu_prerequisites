@@ -21,14 +21,14 @@ def get_program_codes():
 # options = soup.find('option')
 # for i in options:
 #   print(i.attrs['value']
-
-programCodes = ('AKM', 'ATA', 'BED', 'BIL', 'BIO', 'BLG', 'BUS', 'CAB', 'CEV', 'CHZ', 'CIE', 'CMP', 'COM', 'DEN', 'DFH',
-                'DNK', 'DUI', 'EAS', 'ECO', 'ECN', 'EHB', 'EHN', 'EKO', 'ELE', 'ELH', 'ELK', 'END', 'ENR', 'ESL', 'ETH',
-                'ETK', 'EUT', 'FIZ', 'GED', 'GEM', 'GEO', 'GID', 'GMI', 'GSB', 'GUV', 'HUK', 'HSS', 'ICM', 'ILT', 'IML',
-                'ING', 'INS', 'ISE', 'ISL', 'ISH', 'ITB', 'JDF', 'JEF', 'JEO', 'KIM', 'KMM', 'KMP', 'KON', 'MAD', 'MAK',
-                'MAL', 'MAR', 'MAT', 'MCH', 'MEK', 'MEN', 'MET', 'MIM', 'MOD', 'MRE', 'MRT', 'MTO', 'MTH', 'MTM', 'MTR',
-                'MST', 'MUH', 'MUK', 'MUT', 'MUZ', 'NAE', 'NTH', 'PAZ', 'PEM', 'PET', 'PHE', 'PHY', 'RES', 'SBP', 'SES',
-                'STA', 'STI', 'TEB', 'TEK', 'TEL', 'TER', 'TES', 'THO', 'TUR', 'UCK', 'UZB', 'YTO')
+#
+# programCodes = ('AKM', 'ATA', 'BED', 'BIL', 'BIO', 'BLG', 'BUS', 'CAB', 'CEV', 'CHZ', 'CIE', 'CMP', 'COM', 'DEN', 'DFH',
+#                 'DNK', 'DUI', 'EAS', 'ECO', 'ECN', 'EHB', 'EHN', 'EKO', 'ELE', 'ELH', 'ELK', 'END', 'ENR', 'ESL', 'ETH',
+#                 'ETK', 'EUT', 'FIZ', 'GED', 'GEM', 'GEO', 'GID', 'GMI', 'GSB', 'GUV', 'HUK', 'HSS', 'ICM', 'ILT', 'IML',
+#                 'ING', 'INS', 'ISE', 'ISL', 'ISH', 'ITB', 'JDF', 'JEF', 'JEO', 'KIM', 'KMM', 'KMP', 'KON', 'MAD', 'MAK',
+#                 'MAL', 'MAR', 'MAT', 'MCH', 'MEK', 'MEN', 'MET', 'MIM', 'MOD', 'MRE', 'MRT', 'MTO', 'MTH', 'MTM', 'MTR',
+#                 'MST', 'MUH', 'MUK', 'MUT', 'MUZ', 'NAE', 'NTH', 'PAZ', 'PEM', 'PET', 'PHE', 'PHY', 'RES', 'SBP', 'SES',
+#                 'STA', 'STI', 'TEB', 'TEK', 'TEL', 'TER', 'TES', 'THO', 'TUR', 'UCK', 'UZB', 'YTO')
 
 
 # Checks if string_to_remove exists inside string. If it does, it removes it otherwise returns the string back.
@@ -39,7 +39,7 @@ def check_and_remove(string, string_to_remove):
 
 
 # Parse function for prerequisite string given.
-def parse_preq(preq_string):
+def parse_preq(preq_string, programCodes):
     preq_list = []
 
     # If prerequisites are given as 'Yok' it means no prerequisite for this lecture, returns empty list.
@@ -96,8 +96,8 @@ def parse_lectures(program_codes):
         print('\nLooking for', program_code)
         # Getting page data from sis.itu.edu.tr
         try:
-            page = requests.post('http://www.sis.itu.edu.tr/tr/onsart/onsart_tr.php',
-                                 data={'ders_kodu': program_code}).content
+            page = requests.post('https://www.sis.itu.edu.tr/TR/ogrenci/lisans/onsartlar/onsartlar.php',
+                                 data={'derskodu': program_code}).content
         except requests.exceptions.ConnectionError as error:
             print('Can not connect to sis.itu.edu.tr', error)
         except Exception:
@@ -108,17 +108,17 @@ def parse_lectures(program_codes):
         # Making the soup and finding the table part of the soup. Since we only need the table that contains,
         # lectures and their prerequisites.
         soup = BeautifulSoup(page, 'html.parser')
-        preq_table = soup.find('table', {'class': 'onsart'})
+        preq_table = soup.find('table', {'class': ['table','table-bordered', 'table-striped', 'table-hover']})
 
         print('Parsing lectures of', program_code)
         lecture_data = {}
 
         try:
-            rows = preq_table.findAll('tr')
+            rows = preq_table.find_all('tr')
             rows.pop(0)
             # Going over every row.
             for tr in rows:
-                td = tr.findAll('td')
+                td = tr.find_all('td')
 
                 # Taking the first column of the row which contains lecture id.
                 lecture_id = td[0].get_text().replace(' ', '')
@@ -128,7 +128,7 @@ def parse_lectures(program_codes):
 
                 # Getting the string from the third column of the row which contains the prerequisites as a string.
                 # We send that string to be parsed in parse_preq function. Which will return a list of prerequisites.
-                lecture_preq = parse_preq(td[2].get_text())
+                lecture_preq = parse_preq(td[2].get_text(), program_codes)
 
                 # We add these information into a temporary dictionary.
                 lecture_data = {lecture_id: {'lecture_name': lecture_name,
@@ -188,12 +188,13 @@ def parse_program(program_link):
     return program_data
 
 
-def update_lectures():
-    with open('lectures.json', 'w') as lectures_file:
-            json.dump(parse_lectures(programCodes), lectures_file, indent=2, ensure_ascii=False)
+def parse_preqs():
+    with open('preqs.json', 'w') as lectures_file:
+        programCodes = get_program_codes()
+        json.dump(parse_lectures(programCodes), lectures_file, indent=2, ensure_ascii=False)
 
 
 # For running parser.py alone
 if __name__ == '__main__':
-    # update_lectures()
+    parse_preqs()
     print('it takes really long if you really want to update it change the source code and uncomment line above')
