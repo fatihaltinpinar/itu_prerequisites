@@ -52,7 +52,7 @@ class Course{
         this.isSelectable = false;
         this.isCompleted = false;
         this.preqTo = [];
-        nodes.update({id:this.id, level: this.semester, label:this.id, title:"course name goes here"});
+        this.drawn = false;
 
         var table = document.getElementById("semester"+this.semester);
         var row = table.insertRow(1);
@@ -67,6 +67,7 @@ class Course{
                 courseDict[preqs[i]].preqTo.push(this);
             }
         }
+
         if (this.preqs.length === 0){
             this.isSelectable = true;
             this.update();
@@ -120,9 +121,11 @@ class Course{
     }
 
     setColor(color){
-        var node = nodes.get(this.id);
-        node.color = color;
-        nodes.update(node);
+        if (this.drawn){
+            var node = nodes.get(this.id);
+            node.color = color;
+            nodes.update(node);
+        }
         var row = document.getElementById(this.id);
         row.classList.remove("selectable");
         row.classList.remove("nonselectable");
@@ -145,7 +148,15 @@ class Course{
             this.select();
     }
 
+    draw(){
+        console.log("drawing " + this.id + " " + this.preqTo.length + " " + this.preqs.length);
+        if(this.preqTo.length === 0 && this.preqs.length === 0)
+            return;
+        nodes.update({id:this.id, level: this.semester, label:this.id, title:"course name goes here"});
 
+        this.drawn = true;
+
+    }
 }
 
 // create a network
@@ -190,7 +201,7 @@ var options = {
             shakeTowards: 'roots',
     }
   },
-  configure: {},
+  // configure: {},
   "physics": {
   "enabled": false,
 }
@@ -208,5 +219,13 @@ function clearTables(){
         if (table.rows.length <= 1){
             table.parentNode.removeChild(table);
         }
+    }
+}
+
+function drawGraph(){
+    for (var key in courseDict){
+        console.log(key + " " + courseDict[key]);
+        courseDict[key].draw();
+        courseDict[key].update();
     }
 }
