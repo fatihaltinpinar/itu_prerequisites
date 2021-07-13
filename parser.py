@@ -124,16 +124,16 @@ def parse_lectures(program_codes):
                 lecture_id = td[0].get_text().replace(' ', '')
 
                 # Taking the second column of the row which contains full name of that lecture.
-                lecture_name = td[1].get_text()
+                # not needed
+                # lecture_name = td[1].get_text()
 
                 # Getting the string from the third column of the row which contains the prerequisites as a string.
                 # We send that string to be parsed in parse_preq function. Which will return a list of prerequisites.
                 lecture_preq = parse_preq(td[2].get_text(), program_codes)
 
                 # We add these information into a temporary dictionary.
-                lecture_data = {lecture_id: {'lecture_name': lecture_name,
-                                             'lecture_preq': lecture_preq
-                                             }}
+                lecture_data = {lecture_id: lecture_preq}
+
                 data.update(lecture_data)
         except AttributeError as error:
             print('This page is missing stuff! Lecture: ', program_code)
