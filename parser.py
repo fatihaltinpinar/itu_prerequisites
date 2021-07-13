@@ -193,8 +193,11 @@ def parse_preqs():
         programCodes = get_program_codes()
         json.dump(parse_lectures(programCodes), lectures_file, indent=2, ensure_ascii=False)
 
+def parse_programs():
+    pass
 
 # For running parser.py alone
 if __name__ == '__main__':
-    parse_preqs()
+    # parse_preqs()
+    parse_programs()
     print('it takes really long if you really want to update it change the source code and uncomment line above')
