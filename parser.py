@@ -3,18 +3,18 @@ import json
 from bs4 import BeautifulSoup
 
 # Code for acquiring tuple below.
-def get_program_codes():
+def get_course_codes():
     page = requests.get('https://www.sis.itu.edu.tr/TR/ogrenci/lisans/onsartlar/onsartlar.php')
     soup = BeautifulSoup(page.text, 'html.parser')
     options = soup.find_all('option')
 
-    program_codes = []
+    course_codes = []
 
     for option in options:
         opt = option.attrs['value']
         if opt != '':
-            program_codes.append(opt)
-    return program_codes
+            course_codes.append(opt)
+    return course_codes
 
 # page = requests.get('http://www.sis.itu.edu.tr/tr/onsart/').text
 # soup = BeautifulSoup(page, 'html.parser')
@@ -22,7 +22,7 @@ def get_program_codes():
 # for i in options:
 #   print(i.attrs['value']
 #
-# programCodes = ('AKM', 'ATA', 'BED', 'BIL', 'BIO', 'BLG', 'BUS', 'CAB', 'CEV', 'CHZ', 'CIE', 'CMP', 'COM', 'DEN', 'DFH',
+# course_codes = ('AKM', 'ATA', 'BED', 'BIL', 'BIO', 'BLG', 'BUS', 'CAB', 'CEV', 'CHZ', 'CIE', 'CMP', 'COM', 'DEN', 'DFH',
 #                 'DNK', 'DUI', 'EAS', 'ECO', 'ECN', 'EHB', 'EHN', 'EKO', 'ELE', 'ELH', 'ELK', 'END', 'ENR', 'ESL', 'ETH',
 #                 'ETK', 'EUT', 'FIZ', 'GED', 'GEM', 'GEO', 'GID', 'GMI', 'GSB', 'GUV', 'HUK', 'HSS', 'ICM', 'ILT', 'IML',
 #                 'ING', 'INS', 'ISE', 'ISL', 'ISH', 'ITB', 'JDF', 'JEF', 'JEO', 'KIM', 'KMM', 'KMP', 'KON', 'MAD', 'MAK',
@@ -39,7 +39,7 @@ def check_and_remove(string, string_to_remove):
 
 
 # Parse function for prerequisite string given.
-def parse_preq(preq_string, programCodes):
+def parse_preq(preq_string, course_codes):
     preq_list = []
 
     # If prerequisites are given as 'Yok' it means no prerequisite for this lecture, returns empty list.
@@ -70,9 +70,9 @@ def parse_preq(preq_string, programCodes):
 
     # Lecture codes does have a space between number and letter part of the lecture. Deleting those will help us to
     # get codes by splitting the string.
-    for program_code in programCodes:
-        if program_code in preq_string:
-            preq_string = preq_string.replace((program_code + ' '), program_code)
+    for course_code in course_codes:
+        if course_code in preq_string:
+            preq_string = preq_string.replace((course_code + ' '), course_code)
 
     # Splitting preq_string by spaces will give us lecture list. We add that list to the preq_list.
     if len(preq_string) > 0:
@@ -87,30 +87,30 @@ def parse_preq(preq_string, programCodes):
     return preq_list
 
 
-def parse_lectures(program_codes):
+def parse_lectures(course_codes):
 
     data = {}
-    # Going over every program_code in the tuple given above.
-    for program_code in program_codes:
+    # Going over every course_code in the tuple given above.
+    for course_code in course_codes:
 
-        print('\nLooking for', program_code)
+        print('\nLooking for', course_code)
         # Getting page data from sis.itu.edu.tr
         try:
             page = requests.post('https://www.sis.itu.edu.tr/TR/ogrenci/lisans/onsartlar/onsartlar.php',
-                                 data={'derskodu': program_code}).content
+                                 data={'derskodu': course_code}).content
         except requests.exceptions.ConnectionError as error:
             print('Can not connect to sis.itu.edu.tr', error)
         except Exception:
             print('Unexpected error while loading prerequisite page.')
             raise
 
-        print('Making soup of', program_code)
+        print('Making soup of', course_code)
         # Making the soup and finding the table part of the soup. Since we only need the table that contains,
         # lectures and their prerequisites.
         soup = BeautifulSoup(page, 'html.parser')
         preq_table = soup.find('table', {'class': ['table','table-bordered', 'table-striped', 'table-hover']})
 
-        print('Parsing lectures of', program_code)
+        print('Parsing lectures of', course_code)
         lecture_data = {}
 
         try:
@@ -129,14 +129,14 @@ def parse_lectures(program_codes):
 
                 # Getting the string from the third column of the row which contains the prerequisites as a string.
                 # We send that string to be parsed in parse_preq function. Which will return a list of prerequisites.
-                lecture_preq = parse_preq(td[2].get_text(), program_codes)
+                lecture_preq = parse_preq(td[2].get_text(), course_codes)
 
                 # We add these information into a temporary dictionary.
                 lecture_data = {lecture_id: lecture_preq}
 
                 data.update(lecture_data)
         except AttributeError as error:
-            print('This page is missing stuff! Lecture: ', program_code)
+            print('This page is missing stuff! Lecture: ', course_code)
             print(error)
 
         except Exception:
@@ -156,11 +156,12 @@ def parse_lectures(program_codes):
 # should be taken that semester.
 def parse_program(program_link):
     # Gets link and creates the soup.
+    program = program_link[:program_link.rfind('/')+1]
     response = requests.get(program_link)
     program_page = BeautifulSoup(response.content, 'html.parser')
 
     # Finding the tables which contains curriculum for that semester.
-    semester_tables = program_page.findAll('table', {'class': 'plan'})
+    semester_tables = program_page.find_all('table', {'id': 'myTable'})
 
     semester_number = 0
     program_data = {}
@@ -168,21 +169,37 @@ def parse_program(program_link):
     # Every table that we found in semester_tables represent that semester. We give it a number and parse it one by one.
     for semester in semester_tables:
         # Going over every row. Every row contains one lecture in it.
-        rows = semester.findAll('tr')
-        course_list = []
+        rows = semester.find_all('tr')
+        course_list = {}
+        elective_no = 1
 
         for row in rows:
             # In a given row first column contains the lecture code and the second one contains the lecture's full name.
             # We need the second column only if the first column is empty for the given lecture. This occurs for the
             # elective courses.
-            course_codes = row.findAll('td')
-            course_code = course_codes[0].get_text().replace(' ', '')
-            # print(course_code)
+            cols = row.find_all('td')
+            course_code = cols[0].get_text().replace(' ', '')
             if course_code == 'DersKodu':
                 continue
-            elif course_code == ' ':
-                course_code = course_codes[1].get_text()
-            course_list.append(course_code)
+            course_name = cols[1]
+            elective_link = course_name.find_all('a')
+            if (len(elective_link) > 0):
+                link = program + elective_link[0]['href']
+                text = elective_link[0].text
+                elec_type = cols[7].text
+                data = {'type':elec_type,
+                'semester':semester_number}
+                data.update(parse_program(link))
+                course_list.update({
+                    'sec'+str(elective_no): data})
+                elective_no += 1
+            else:
+                course_list.update({course_code: course_name.text})
+
+            # print(course_code)
+
+            # elif course_code == ' ':
+            #     course_code = cols[1].get_text()
         program_data.update({semester_number: course_list})
         semester_number += 1
     return program_data
@@ -190,8 +207,8 @@ def parse_program(program_link):
 
 def parse_preqs():
     with open('preqs.json', 'w') as lectures_file:
-        programCodes = get_program_codes()
-        json.dump(parse_lectures(programCodes), lectures_file, indent=2, ensure_ascii=False)
+        course_codes = get_course_codes()
+        json.dump(parse_lectures(course_codes), lectures_file, indent=2, ensure_ascii=False)
 
 def parse_programs():
     pass
@@ -200,4 +217,6 @@ def parse_programs():
 if __name__ == '__main__':
     # parse_preqs()
     parse_programs()
-    print('it takes really long if you really want to update it change the source code and uncomment line above')
+    # program = parse_program('https://www.sis.itu.edu.tr/TR/ogrenci/lisans/ders-planlari/plan/BLGE/201810.html')
+    # print(program)
+    # print('it takes really long if you really want to update it change the source code and uncomment line above')
