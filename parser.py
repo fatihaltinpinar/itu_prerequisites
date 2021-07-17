@@ -227,13 +227,29 @@ def parse_preqs():
         course_codes = get_course_codes()
         json.dump(parse_lectures(course_codes), lectures_file, indent=2, ensure_ascii=False)
 
-def parse_programs():
-    pass
+def parse_programs(program_codes):
+    program_data = {}
+    plan = 'https://www.sis.itu.edu.tr/TR/ogrenci/lisans/ders-planlari/plan/'
+    for program_code in program_codes:
+        print(f'Parsing {program_code}...')
+        program_link = plan + program_code + '/'
+        r = requests.get(program_link)
+        soup = BeautifulSoup(r.content, 'html.parser')
+        links = soup.find_all('a',{'title':'Ders Planını Görmek İçin Tıklayınız'})
+        if len(links) == 0:
+            print("\nThis is not supposed to happen")
+            print("Happened with", program_code, '\n')
+        else:
+            program_link += links[-1]['href']
+            program_data.update({program_code: parse_program(program_link)})
+
+    with open('program_data.json', 'w') as f:
+        json.dump(program_data, f, indent=2, ensure_ascii=False)
 
 # For running parser.py alone
 if __name__ == '__main__':
     # parse_preqs()
-    parse_programs()
+    parse_programs(program_codes)
     # program = parse_program('https://www.sis.itu.edu.tr/TR/ogrenci/lisans/ders-planlari/plan/BLGE/201810.html')
     # print(program)
     # print('it takes really long if you really want to update it change the source code and uncomment line above')
