@@ -31,6 +31,23 @@ def get_course_codes():
 #                 'STA', 'STI', 'TEB', 'TEK', 'TEL', 'TER', 'TES', 'THO', 'TUR', 'UCK', 'UZB', 'YTO')
 
 
+program_codes = ('INS', 'INSE', 'GEO', 'GEOE', 'CEV', 'CEVE',   # insaat
+                'MIM', 'MIME', 'SBP', 'SBPE', 'EUT', 'EUTE', 'ENTE', 'ICM', 'PEM', 'PEME', #mimarlik
+                'MAK', 'MAKE', 'IML', 'IMLE',  #makina
+                'ELH', 'EHB', 'EHBE', 'ELK', 'ELKE', 'ELE', 'TEL', 'KOM', 'KOME', # Elektrik Elektronik
+                'JEO', 'JEOE', 'JEF', 'JEFE', 'MAD', 'MADE', 'PET', 'PETE', 'CHZ', 'CHZE', #maden
+                'KMM', 'KMME', 'GID', 'GIDE', 'MET', 'METE', # kimya
+                'ISL', 'ISLE', 'END', 'ENDE', 'ECNE', #isletme
+                'DEN', 'DENE', 'GEM', 'GEME',  #gemi
+                'MAT', 'MATE', 'FIZ', 'FIZE', 'KIM', 'KIME', 'BIO', 'BIOE', #fen edebiyat
+                'MTO', 'MTOE', 'UZB', 'UZBE', 'UCK', 'UCKE', #ucka
+                'TEB', 'MTR', 'SES', 'KMP', 'BST', 'MUT', 'MZT', 'MUZ', 'MUZE', 'CAB', 'CEB', 'THO', # turk musikisi
+                'DUI', 'DUIE', 'GMI', 'GMIE', #deniz
+                'TEK', 'TEKE', #tekstil
+                'BLG', 'BLGE', 'YZVE', #XD
+                'SIS', 'SEK', 'SIN', 'AIN', 'SBL', 'SDU', 'SGM', 'SGI', 'SMT', 'STP', 'SCE', 'MBI', 'MCB', 'SEN', 'EHN', #hala elle yaziyorum
+                'MTM', 'MEN', 'NAE') # yani neden sitenin burasi dinamik? niye cavaciprit calistirionuz bida tobest
+
 # Checks if string_to_remove exists inside string. If it does, it removes it otherwise returns the string back.
 def check_and_remove(string, string_to_remove):
     if string_to_remove in string:
