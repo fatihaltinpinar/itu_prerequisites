@@ -56,14 +56,15 @@ class Course{
         this.preqTo = [];
         this.drawn = false;
 
+        // console.log(id, title, semester);
         var table = document.getElementById("semester"+this.semester);
         var row = table.insertRow(1);
         row.id = this.id;
         row.onclick = function() {courseDict[this.id].toggle();};
         row.innerHTML = "<td>" + this.id + "</td>" +
             "<td>" + this.title + "</td>" +
-            "<td>" + this.course_type + "</td>"
-            "<td>"+ this.semester + "</td>"
+            "<td>" + this.course_type + "</td>"+
+            "<td>"+ this.semester + "</td>";
 
         for(var i = 0; i<preqs.length; i++){
             if (preqs[i] in courseDict){
@@ -154,7 +155,7 @@ class Course{
     }
 
     draw(){
-        console.log("drawing " + this.id + " " + this.preqTo.length + " " + this.preqs.length);
+        // console.log("drawing " + this.id + " " + this.preqTo.length + " " + this.preqs.length);
         if(this.preqTo.length === 0 && this.preqs.length === 0)
             return;
         nodes.update({id:this.id, level: this.semester, label:this.id, title:this.title});
@@ -229,7 +230,7 @@ function clearTables(){
 
 function drawGraph(){
     for (var key in courseDict){
-        console.log(key + " " + courseDict[key]);
+        // console.log(key + " " + courseDict[key]);
         courseDict[key].draw();
         courseDict[key].update();
     }
