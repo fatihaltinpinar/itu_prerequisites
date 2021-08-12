@@ -1,0 +1,2 @@
+courseDict["BGL1"] = new Course("BGL1", "BLG1 dersi", 1, "Z", ['BLG1', 'BLG2']);
+courseDict["BGL2"] = new Course("BGL2", "BLG1 dersi", 3, "ITB3", []);
