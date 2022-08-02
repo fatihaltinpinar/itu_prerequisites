@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133197198-1"></script>
     <script>
@@ -10,6 +12,8 @@
 
         gtag('config', 'UA-133197198-1');
     </script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     <meta charset="UTF-8">
     <title>ÖNŞART DIYAGRAMI</title>
@@ -28,10 +32,25 @@
                 programSelector.innerHTML = '<select name="subj" id="subj_id"><option value="">Seçiniz</option></select>';
                 break;
             case 'IN':
-                programSelector.innerHTML = '<select name="subj" id="subj_id"><option value="">Seçiniz</option><option value="INS">İnşaat Mühendisliği (%30 İngilizce)</option><option value="INSE">İnşaat Mühendisliği (%100 İngilizce)</option><option value="GEO">Geomatik Mühendisliği (%30 İngilizce)</option><option value="GEOE">Geomatik Mühendisliği (%100 İngilizce)</option><option value="CEV">Çevre Mühendisliği (%30 İngilizce)</option><option value="CEVE">Çevre Mühendisliği (%100 İngilizce)</option></select>';
+                programSelector.innerHTML = '<select name="subj" id="subj_id"><option value="">Seçiniz</option>' +
+                    '<option value="INS">İnşaat Mühendisliği (%30 İngilizce)</option><option value="INSE">İnşaat Mühendisliği (%100 İngilizce)</option>' +
+                    '<option value="GEO">Geomatik Mühendisliği (%30 İngilizce)</option><option value="GEOE">Geomatik Mühendisliği (%100 İngilizce)</option>' +
+                    '<option value="CEV">Çevre Mühendisliği (%30 İngilizce)</option><option value="CEVE">Çevre Mühendisliği (%100 İngilizce)</option></select>';
                 break;
             case 'MM':
-                programSelector.innerHTML = '<select name="subj" id="subj_id"><option value="">Seçiniz</option><option value="MIM">Mimarlık (% 30 İngilizce)</option><option value="MIME">Mimarlık (% 100 İngilizce)</option><option value="SBP">Şehir ve Bölge Planlaması (% 30 İngilizce)</option><option value="SBPE">Şehir ve Bölge Planlaması (% 100 İngilizce)</option><option value="EUT">Endüstri Ürünleri Tasarımı (% 30 İngilizce)</option><option value="EUTE">Endüstri Ürünleri Tasarımı (% 100 İngilizce)</option><option value="ICM">İç Mimarlık (% 30 İngilizce)</option><option value="PEM">Peyzaj Mimarlığı (% 30 İngilizce)</option><option value="PEME">Peyzaj Mimarlığı (% 100 İngilizce)</option></select>';
+                programSelector.innerHTML = '<select name="subj" id="subj_id">' +
+                    '<option value="">Seçiniz</option>' +
+                    '<option value="MIM">Mimarlık (% 30 İngilizce)</option>' +
+                    '<option value="MIME">Mimarlık (% 100 İngilizce)</option>' +
+                    '<option value="SBP">Şehir ve Bölge Planlaması (% 30 İngilizce)</option>' +
+                    '<option value="SBPE">Şehir ve Bölge Planlaması (% 100 İngilizce)</option>' +
+                    '<option value="EUT">Endüstri Ürünleri Tasarımı (% 30 İngilizce)</option>' +
+                    '<option value="EUTE">Endüstri Ürünleri Tasarımı (% 100 İngilizce)</option>' +
+                    '<option value="ENTE">Endüstriyel Tasarım (% 100 İngilizce)</option>' +
+                    '<option value="ICM">İç Mimarlık (% 30 İngilizce)</option>' +
+                    '<option value="PEM">Peyzaj Mimarlığı (% 30 İngilizce)</option>' +
+                    '<option value="PEME">Peyzaj Mimarlığı (% 100 İngilizce)</option>' +
+                    '</select>';
                 break;
             case 'MK':
                 programSelector.innerHTML = '<select name="subj" id="subj_id"><option value="">Seçiniz</option><option value="MAK">Makina Mühendisliği (% 30 İngilizce)</option><option value="MAKE">Makina Mühendisliği (% 100 İngilizce)</option><option value="IML">İmalat Mühendisliği (% 30 İngilizce)</option><option value="IMLE">İmalat Mühendisliği (% 100 İngilizce)</option></select>';
@@ -67,7 +86,11 @@
                 programSelector.innerHTML = '<select name="subj" id="subj_id"><option value="">Seçiniz</option><option value="TEK">Tekstil Mühendisliği (% 30 İngilizce)</option><option value="TEKE">Tekstil Mühendisliği (% 100 İngilizce)</option></select>';
                 break;
             case 'BB':
-                programSelector.innerHTML = '<select name="subj" id="subj_id"><option value="">Seçiniz</option><option value="BLG">Bilgisayar Mühendisliği (% 30 İngilizce)</option><option value="BLGE">Bilgisayar Mühendisliği (% 100 İngilizce)</option></select>';
+                programSelector.innerHTML = '<select name="subj" id="subj_id"><option value="">Seçiniz</option>' +
+                    '<option value="BLG">Bilgisayar Mühendisliği (% 30 İngilizce)</option>' +
+                    '<option value="BLGE">Bilgisayar Mühendisliği (% 100 İngilizce)</option>' +
+                    '<option value="YZVE">Yapay Zeka ve Veri Müh (%100 İngilizce)</option>' +
+                    '</select>';
                 break;
             case 'SN':
                 programSelector.innerHTML = '<select name="subj" id="subj_id"><option value="">Seçiniz</option><option value="SIS">İşletme Uluslararası Ortak Lisans Programı</option><option value="SEK">Ekonomi Uluslararası Ortak Lisans Programı</option><option value="SIN">İnşaat Mühendisliği Uluslararası Ortak Lisans Programı</option><option value="SBL">Bilişim Sistemleri Mühendisliği Uluslararası Ortak Lisans Programı</option><option value="SDU">Deniz Ulaştırma İşletme Mühendisliği Uluslararası Ortak Lisans Programı</option><option value="SGM">Gemi Makinaları İşletme Mühendisliği Uluslararsı Ortak Lisans Programı</option><option value="SMT">Moda Tasarımı Uluslararası Ortak Lisans Programı</option><option value="STP">Tekstil Geliştirme ve Pazarlama Uluslararası Ortak Lisans Programı</option><option value="SCE">Çevre Mühendisliği Uluslararası Ortak Lisans Programı</option><option value="MBI">Biyomühendislik Uluslararası Ortak Lisans Programı</option><option value="MCB">Çevre Bilimleri ve Yönetimi Uluslararası Ortak Lisans Programı</option><option value="SEN">Endüstri Mühendisliği Uluslararası Ortak Lisans Programı</option><option value="EHN">Elektronik ve Haberleşme Mühendisliği Uluslararası Ortak Lisans Programı</option></select>';
@@ -85,11 +108,19 @@
 </script>
 </head>
 <body>
-    <div class="topBar">
-        <p>LMAO</p>
-    </div>
     <div class="content">
-        <h1>İTÜ ÖNŞART DIYAGRAMLARI</h1>
+        <h1>İTÜ ÖNŞART <strike>DIYAGRAMLARI</strike> 2.0</h1>
+        <p>
+            Derslere tıklayarak seçilme durumlarını değiştirebilirsin.
+        </p>
+        <table class="text-center">
+            <tr>
+                <td class="completed col-1">Tamamlanmış/Verilmiş Ders</td>
+                <td class="selectable col-1">Alınabilir Ders</td>
+                <td class="nonselectable col-1">Alınamayan Ders</td>
+            </tr>
+        </table>
+        <hr/>
         <form onSubmit="return redirect();">
             <table>
                 <tr>

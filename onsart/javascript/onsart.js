@@ -76,8 +76,8 @@ class Course{
 
         if (this.preqs.length === 0){
             this.isSelectable = true;
-            this.update();
         }
+        // this.update();
         if(this.isSelectable){
             this.setColor(color_selectable);
         } else {
@@ -91,6 +91,21 @@ class Course{
             this.setColor(color_completed);
             for (var i = 0; i<this.preqTo.length; i++){
                 this.preqTo[i].update();
+            }
+        } else {
+            // bi comment attir bura
+            // sa hoca comment geldi mi
+            // güzelmiş beğendim
+            // +1
+            // geldi wallah
+            if (this.preqs.length > 0){
+                var alert_message = "Bu dersin onsartlari:\n";
+                for (var i = 0; i<this.preqs.length; i++){
+                    if(this.preqs[i].id in courseDict){
+                        alert_message += this.preqs[i].id + " - " + this.preqs[i].title + "\n";
+                    }
+                }
+                alert(alert_message);
             }
         }
     }
@@ -107,6 +122,7 @@ class Course{
     }
 
     update(){
+        console.log("updateing color of " + this.id);
         this.isSelectable = true;
         for (var i = 0; i<this.preqs.length; i++){
             if(this.preqs[i].isCompleted === false){
@@ -158,7 +174,9 @@ class Course{
         // console.log("drawing " + this.id + " " + this.preqTo.length + " " + this.preqs.length);
         if(this.preqTo.length === 0 && this.preqs.length === 0)
             return;
-        nodes.update({id:this.id, level: this.semester, label:this.id, title:this.title});
+        if(this.course_type.includes("Secmeli"))
+            return;
+        nodes.update({id:this.id, level: this.semester, label:this.id, title:(this.id + " - " + this.title)});
 
         this.drawn = true;
 
